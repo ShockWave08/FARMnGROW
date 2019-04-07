@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 	<head>
-		<title> Binary Arithmetics </title>
+		<title>  </title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="Keywords" content="">
+		<meta name="Keywords" content="Farming, Agriculture, Rewable Energy, Energy, Solar Energy, Hydro Energy, Geothermal Energy, WInd Energy">
 		<meta name="Description" content="">
 		<meta name= "author" content= "Lee Daniel">
 
@@ -14,7 +14,7 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 		<link rel="stylesheet" href="Css/bootstrap.validate.min.css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 		
 		<link href="https://fonts.googleapis.com/css?family=Capriola|Open+Sans|Righteous|Roboto" rel="stylesheet">
 		
@@ -48,17 +48,17 @@
 			}
 
 			.parallax1{
-				background-image: url("img/bg2.jpg");
+				background-image: url("img/bgtemp.jpg");
 				min-height: 100%;
 			}
 
 			.parallax2{
-			   background-image: url("img/img-12.jpg");
+			   background-image: url("img/parallaximg3.jpeg");
 			   min-height: 60%;
 			}
 
 			.parallax3{
-			   background-image: url("img/bg1.jpg");
+			   background-image: url("img/parallaximg2.jpeg");
 			   min-height: 40%;
 			}
 
@@ -246,7 +246,7 @@
 			.heading{
 			  position: absolute;
 			  color: #fff;
-			  top: 58%;
+			  top: 68%;
 			  width: 100%;
 			  font-size: 550%;
 			  font-family: 'Capriola', sans-serif;
@@ -262,13 +262,14 @@
 			  color: #fff;
 			  font-family: 'Capriola', sans-serif;
 			  font-weight: 600 !important;
-			  display: inline-block;
+			  right: 50%;
 			  height: 50px;
+			  font-size: 150%;
 			  line-height: 40px;
 			  text-align: center;
 			  padding: 0 20px;
 			  cursor: pointer;
-			  bottom: 23%;
+			  bottom: 13%;
 			  border: 3px solid #fff;
 			  border-radius: 10px 10px;
 			  -moz-border-radius: 10px 10px;
@@ -352,7 +353,7 @@
 			}
 
 			.sec{
-				background-color: rgba(255, 127, 80, 0.8);
+				background-color: rgba(244, 164, 96, 0.7);
 				box-shadow: 6px 6px 5px #696969;
 				color: #fff;
 				height: auto;
@@ -367,56 +368,57 @@
 				font-size: 2em;
 			}
 
-			.butt{
-				border: 2px solid #00CED1;
-				background-color: #fff;
-				margin: 20px 0;
-				border-radius: 25px;
-				color: #00CED1;
-				cursor: pointer;
-			}
 
-			.butt:hover{
-				border: 2px solid #fff;
-				background-color: #00CED1;
-				box-shadow: 6px 6px 5px #696969;
-				color: #fff;
-			}
-
-			.butt_hover{
-				border: 2px solid #fff;
-				background-color: #00CED1;
-				box-shadow: 6px 6px 5px #696969;
-				color: #fff;
-			}
-
-			a{
-				text-decoration: none;
-			}
-
-			.vid_container{
-				background-color: rgba(255, 127, 80, 0.8);
+			.farm_container{
+				background-color: rgba(244, 164, 96, 0.7);
 				display: none;
 				margin: 0;
 				padding: 0 0 3% 0;
 			}
 
-			.vid_box{
+			.farm_box{
 				position: relative;
-				height: 300px;
-				width: 95%;
+				height: 400px;
+				width: 90%;
 				border: 2px solid #fff;
 				margin-bottom: 20px;
 				border-radius: 25px;
-				background-color: rgba(0, 206, 209, 0.6);
-				color: white;
 			}
 
-			.vid_box:hover{
+			.farm_box1, .farm_box2, .farm_box3{
+				position: relative;
+				opacity: .75;
+				background-position: center;
+				-webkit-background-size: contain;
+				-moz-background-size: contain;
+				-o-background-size: contain;
+				background-size: 100% 100%;
+				background-repeat: no-repeat;
+				background-attachment: fixed;
+			}
+
+			.farm_box1{
+				background-image: url("img/bgimg2.jpg");
+				min-width: 100%;
+			}
+
+			.farm_box2{
+				background-image: url("img/bgimg6.jpg");
+				min-width: 100%;
+			}
+
+			.farm_box3{
+				background-image: url("img/bgtemp1.jpg");
+				min-width: 100%;
+			}
+
+			.farm_box:hover{
 				box-shadow: 5px 5px 6px #696969;
 			}
 
-			.vid_label h3{
+			
+
+			.farm_label h3{
 				position: relative;
 				padding-top: 30%;
 				color: #fff;
@@ -426,7 +428,7 @@
 				font-weight: 900;
 			}
 
-			.vid_overlay{
+			.farm_overlay{
 				position: absolute;
 				cursor: pointer;
 				transition: all 0.5s ease;
@@ -435,36 +437,51 @@
 				border-radius: 25px;
 			}
 
-			.vid_box:hover .vid_overlay{
+			.farm_box:hover .farm_overlay{
 				opacity: 1;
 			}
 
-			.vid_title{
+			.farm_title{
 				color: #fff;
 				font-size: 3em;
 				font-family: Capriola, sans-serif;
 				margin-bottom: 5%;
 			}
 
-			.vid_brief{
+			.farm_brief{
 				color: #fff;
 				font-size: 1.5em;
 				font-family: Roboto, sans-serif;
 				margin-bottom: 5%;
 			}
 
-			.vid_text{
+			.farm_text{
 				color: #fff;
 				font-family: sans-serif;
 				font-weight: 600;
 				position: absolute;
 				top: 30%;
 				left: 50%;
-				transform: translate(-50%,-50%);
+				-webkit-transform: translate(-50%, -50%);
+				-ms-transform: translate(-50%, -50%);
+				transform: translate(-50%, -50%);
+				text-align: center;
 				font-size: 20px;
 			}
 
-			.fa{
+			
+
+			.overlay_Top{
+				height: 0;
+				width: 100%;
+				top: 0;
+			}
+
+			.farm_box:hover .overlay_Top{
+				height: 100%;
+			}
+
+			.fas{
 				position: absolute;
 				top: 50%;
 				left: 50%;
@@ -474,50 +491,8 @@
 				cursor: pointer;
 			}
 
-			.fa:hover{
+			.fas:hover{
 				text-shadow: 5px 5px 4px rgba(255, 255, 255, 0.4);
-			}
-
-			.overlay_Left{
-				height: 100%;
-				width: 0;
-				top: 0;
-				left: 0;
-			}
-
-			.overlay_Top{
-				height: 0;
-				width: 100%;
-				top: 0;
-			}
-
-			.overlay_Right{
-				height: 100%;
-				width: 0;
-				top: 0;
-				right: 0;
-			}
-
-			.vid_box:hover .overlay_Left{
-				width: 100%;
-			}
-
-			.vid_box:hover .overlay_Top{
-				height: 100%;
-			}
-
-			.vid_box:hover .overlay_Right{
-				width: 100%;
-			}
-
-			.binary_desc{
-				text-align: left;
-				color: #fff;
-				font-size: 20px;
-				font-family: Roboto, sans-serif;
-				margin: 0;
-				font-weight: 500;
-				padding: 2% 10%;
 			}
 
 			hr{
@@ -545,15 +520,6 @@
 				font-weight: 600;
 			}
 
-			.comp_desc{
-				 background-color: rgba(0, 0, 0, 0.6); 
-				 border: 1px solid rgba(255, 255, 255, 0.7); 
-				 width: 25%;
-				 border-radius: 25px;
-				 padding-left: 2%;
-				 line-height: 40px;
-			}
-
 			#arithmetic_test .form-horizontal .has-feedback .form-control-feedback {
 				top: 0;
 				right: -30px;
@@ -569,65 +535,6 @@
 				margin: 0;
 			}
 
-			#customers{
-				width: 70%;
-				left: 50%;
-			}
-
-			#customers td, #customers th {
-				border: 1px solid #ddd;
-				padding: 8px;
-			}
-
-			#customers tr:nth-child(even){
-				background-color: #f2f2f2;
-			}
-
-			#customers tr:hover {
-				background-color: #ddd;
-			}
-
-			#customers th {
-				padding-top: 12px;
-				padding-bottom: 12px;
-				text-align: left;
-				background-color: #4CAF50;
-				color: white;
-			}
-
-			.table_cont{
-				padding: 3% 7%;
-				width: 100%;
-				border: 1ps solid red;
-			}
-
-			.column {
-			  float: left;
-			  width: 33.3%;
-			  margin-bottom: 16px;
-			  padding: 0 8px;
-			}
-
-			@media screen and (max-width: 650px) {
-			  .column {
-			    width: 100%;
-			    display: block;
-			  }
-			}
-
-			.card {
-			  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-			}
-
-			.container_pic {
-			  padding: 0 16px;
-			}
-
-			.container_pic::after, .row::after {
-			  content: "";
-			  clear: both;
-			  display: table;
-			}
 
 		</style>
 
@@ -637,7 +544,7 @@
     <body>
 		<a href = "#top">
 			<div id = "logo">
-				<p> Group 3 </p>
+				<p> FarmSmart </p>
 			</div>
 		</a>
 
@@ -654,589 +561,48 @@
 
             <!-- Overlay content -->
             <div class="overlay-content borderXwidth">
-              <a href="#sec2">Basics</a>
-              <a href="#sec3">Basics Tests</a>
-              <a href="#sec4">Unsigned Binary Multiplication</a>
-              <a href="#sec5">Unsigned Binary Division</a>
+              <a href="#sec2">Home</a>
+              <a href="#sec3">Farming Type</a>
             </div>
         </div>
 
 		<div class = "parallax1" id = "top">
 			<div class="heading">
-				Binary Arithmetics
+				Saving Time, Money and Energy
 			</div>
-				<a href= "#sec2"><div class = "opt_butt1 anim1_butt"> <span class ="butt_col1">Lets</span> <span class ="butt_col2">Get</span> <span class ="butt_col1">Started</span></div></a>
+				<a href= "#sec2"><div class = "opt_butt1 anim1_butt"> <span class ="butt_col1">Start </span> <span class ="butt_col2">Saving</span></div></a>
 		</div>
-
+		
       	<section class = "sec" id = "sec2">
 			<div class = "container-fluid">
-				<!-- row 1 -->
+				
 				<div class = "row">
 					<div class = "col-md-2">
 					</div>
 					<div class = "col-md-8">
-						<h1 id = "basics">Do you need to learn the basics?</h1>
+						<h1 id = "basics">Who are we?</h1>
 					</div>
 					<div class = "col-md-2">
 					</div>
 				</div>
 
-				<!-- row 2 -->
+				
 				<div class = "row">
-					<div class = "col-md-5">
+					<div class = "col-md-1">
 					</div>
-					<div class = "col-md-2">
-						<a href = "#sec4">
-							<div class = "butt butt1">Not Really</div>
-						</a>
+					<div class = "col-md-10">
+						<div class = "basics">Description of who we are, establishment and what we do</div>
 					</div>
-					<div class = "col-md-5">
-					</div>
-				</div>
-
-				<!-- row 3  of buttons-->
-				<div class = "row">
-					<div class = "col-md-2">
-						<div class = "butt butt2">Binary Addition</div>
-					</div>
-					<div class = "col-md-2">
-						<div class = "butt butt3">Binary Subtraction</div>
-					</div>
-					<div class = "col-md-2">
-						<div class = "butt butt4">Binary Multiplication</div>
-					</div>
-	        		<div class = "col-md-2">
-						<div class = "butt butt5">Binary Division</div>
-					</div>
-	        		<div class = "col-md-2">
-						<div class = "butt butt6">Binary Complement</div>
-					</div>
-	        		<div class = "col-md-2">
-						<div class = "butt butt7">Bit Shifting</div>
+					<div class = "col-md-1">
 					</div>
 				</div>
 			</div>
-
         </section>
-
-		<section class = "vid_container Addition">
-			<div class = "container">
-				<div class = "row">
-					<div class = "col-md-4">
-					</div>
-					<div class = "col-md-4">
-						<h2 class = "vid_title"> Binary Addition</h2>
-					</div>
-					<div class = "col-md-4">
-					</div>
-				</div>
-				<div class = "row">
-					<div class = "col-md-12">
-						<p class = "vid_brief">
-							To add these two numbers, we first consider the "ones" column and calculate 6 plus 6, which results in 12. Since 12 is greater than 9 (remembering that base 10 operates with digits 0-9), we "carry" the 1 from the "ones" column to the "tens column" and leave the 2 in the "ones" column.
-						</p>
-					</div>
-				</div>
-				<div class = "row">
-					<div class = "col-sm-3 col-md-3 col-lg-3"></div>
-					<div class = "col-sm-6 col-md-6 col-lg-6">
-						<div class = "vid_box embed-responsive embed-responsive-16by9" id = "add1">
-							<div class = "vid_label"> <h3>Binary Addition </h3> </div>
-							<div class = "vid_overlay overlay_Left">
-							  <div class="vid_text">watch tutorial</div>
-							   <i class="fa fa-play-circle-o"></i>
-							</div>
-						</div>
-						<script>
-							document.getElementById('add1').addEventListener('click', function() {
-								this.innerHTML = '<iframe width="100%" height="300" src="https://www.youtube.com/embed/5F6orbqZigI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
-							}); 
-						</script>
-					</div>
-					<div class = "col-sm-3 col-md-3 col-lg-3"></div>
-				</div>
-			</div>
-			<hr>
-			<div class = "binary_desc">
-				<p><strong>Binary addition</strong> calculations work in the same way, except that only 0's and 1's can be used, instead of the whole spectrum of 0-9. This actually makes binary addition much simpler than decimal addition, as we only need to remember the following:</p>
-				<p> 0 + 0 = 0<br />
-					0 + 1 = 1<br />
-					1 + 0 = 1<br />
-					1 + 1 = 10
-				</p>
-				<p> As an example of binary addition we have, </p>
-				<p> &nbsp; 101<br />
-					<u>+101</u>
-				</p>
-				<p> a) To add these two numbers, we first consider the "ones" column and calculate 1 + 1, which (in binary) results in <span style="color:red">1</span>0. We "carry" the <span style="color:red">1</span> to the "tens" column, and the leave the 0 in the "ones" column. </p>
-				<p> b) Moving on to the "tens" column, we calculate <span style="color:red">1</span> + (0 + 0), which gives 1. Nothing "carries" to the "hundreds" column, and we leave the 1 in the "tens" column. </p>
-				<p> c) Moving on to the "hundreds" column, we calculate 1 + 1, which gives <span style="color:red">1</span>0. We "carry" the <span style="color:red">1</span> to the "thousands" column, leaving the 0 in the "hundreds" column. </p>
-				<p> &nbsp; 101<br />
-					<u>+101</u><br />
-					1010
-				</p>
-				<p>Another example of binary addition:</p>
-				<p> &nbsp; 1011<br />
-					<u>+1011</u><br />
-					10110
-				</p>
-				<p> Note that in the "tens" column, we have <span style="color:red">1</span> + (1 + 1), where the first <span style="color:red">1</span> is "carried" from the "ones" column. Recall that in binary, </p>
-				<p> 1 + 1 + 1 = 10 + 1<br />
-					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; = 11
-				</p>
-				<br/>
-			</div>
-		</section>
-
-		<section class = "vid_container Subtraction">
-			<div class = "container">
-				<div class = "row">
-					<div class = "col-md-4">
-					</div>
-					<div class = "col-md-4">
-						<h2 class = "vid_title"> Binary Subtraction</h2>
-					</div>
-					<div class = "col-md-4">
-					</div>
-				</div>
-				<div class = "row">
-				<div class = "col-md-12">
-					<p class = "vid_brief">To divide two numbers, which result is an exact division, we basically need to follow four steps: division, multiplication, subtraction, and next digit.</p>
-				</div>
-				</div>
-				<div class = "row">
-					<div class = "col-sm-3 col-md-3 col-lg-3"></div>
-					<div class = "col-sm-6 col-md-6 col-lg-6">
-			  			<div class = "vid_box embed-responsive embed-responsive-16by9" id = "sub1">
-							<div class = "vid_label"> <h3>Binary Subtraction </h3> </div>
-							<div class = "vid_overlay overlay_Left">
-							  <div class="vid_text">watch tutorial</div>
-							  <i class="fa fa-play-circle-o"></i>
-							</div>
-						</div>
-						<script>
-							document.getElementById('sub1').addEventListener('click', function() {
-								this.innerHTML = '<iframe width="100%" height="300" src="https://www.youtube.com/embed/OHf0Eg9ZhGQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
-							}); 
-						</script>
-					</div>
-					<div class = "col-sm-3 col-md-3 col-lg-3"></div>
-				</div>
-			</div>
-			<hr>
-			<div class = "binary_desc">
-			  	<p>Similar to binary addition, <strong>binary subtraction</strong> calculations are simple as well, as long as we remember how subtraction and the base 2 number system. Let's first look at an easy example.</p>
-				<p> &nbsp; 111<br />
-					&nbsp;<u>- 10</u><br />
-					&nbsp; 101
-				</p>
-				<p> Note that the difference is the same if this was decimal subtraction. Also similar to decimal subtraction is the concept of "borrowing.&quot; Watch as &quot;borrowing" occurs when a larger digit, say 8, is subtracted from a smaller digit, say 5, as shown below in decimal subtraction. </p>
-				<p> &nbsp; &nbsp; 35<br />
-					&nbsp; <u>-&nbsp;&nbsp; 8</u><br />
-					&nbsp; &nbsp; 27
-				</p>
-				<p> For 10 minus 1, 1 is borrowed from the "tens" column for use in the "ones" column, leaving the "tens" column with only 2. The following examples show "borrowing" in binary subtraction. </p>
-				<p> &nbsp; &nbsp; 10 &nbsp; &nbsp; &nbsp; 100 &nbsp; &nbsp; &nbsp; &nbsp;1010<br />
-					&nbsp;&nbsp; <u>-&nbsp; 1</u> &nbsp; &nbsp; &nbsp; <u>- 10</u> &nbsp; &nbsp; &nbsp; <u>- 110</u><br />
-					&nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp; 10 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 100
-				</p>
-				<br />
-			</div>
-		</section>
-
-		<section class = "vid_container multiplication">
-			<div class = "container">
-				<div class = "row">
-					<div class = "col-md-3">
-					</div>
-					<div class = "col-md-6">
-						<h2 class = "vid_title"> Binary Multiplication</h2>
-					</div>
-					<div class = "col-md-3">
-					</div>
-				</div>
-				<div class = "row">
-					<div class = "col-md-12">
-							 <p class = "vid_brief">To perform a binary multiplication problem, we need to understand how addition works with binary numbers and follow the same process of multiplication and addition we would use with decimal numbers.</p>
-					</div>
-				</div>
-				<div class = "row">
-					<div class = "col-sm-3 col-md-3 col-lg-3"></div>
-					<div class = "col-sm-6 col-md-6 col-lg-6">
-						<div class = "vid_box embed-responsive embed-responsive-16by9" id = "mul1">
-							<div class = "vid_label"> <h3> Binary Multiplication</h3> </div>
-							<div class = "vid_overlay overlay_Left">
-							  <div class="vid_text">watch tutorial</div>
-							  <i class="fa fa-play-circle-o"></i>
-							</div>
-						</div>
-						<script>
-							document.getElementById('mul1').addEventListener('click', function() {
-								this.innerHTML = '<iframe width="100%" height="300" src="https://www.youtube.com/embed/Va_UvwJULcI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
-							}); 
-						</script>
-					</div>
-					<div class = "col-sm-3 col-md-3 col-lg-3"></div>
-				</div>
-			</div>
-			<hr>
-			<div class = "binary_desc">
-				<p><strong>Binary multiplication</strong> is actually much simpler to calculate than decimal multiplication. In the case of decimal multiplication, we need to remember 3 x 9 = 27, 7 x 8 = 56, and so on. In binary multiplication, we only need to remember the following,
-				<p> 0 x 0 = 0<br />
-					0 x 1 = 0<br />
-					1 x 0 = 0<br />
-					1 x 1 = 1
-				</p>
-				<p> Note that since binary operates in base 2, the multiplication rules we need to remember are those that involve 0 and 1 only. As an example of binary multiplication we have 101 times 11, </p>
-				<p>&nbsp; 101<br />
-					&nbsp; <u>x<span style="color:red">1</span><span style="color:blue">1</span></u>
-				</p>
-				<p> First we multiply 101 by <span style="color:blue">1</span>, which produces 101. Then we put a <span style="color:green">0</span> as a placeholder as we would in decimal multiplication, and multiply 101 by <span style="color:red">1</span>, which produces 101. </p>
-				<p> &nbsp; 101<br />
-					&nbsp; <u>x<span style="color:red">1</span><span style="color:blue">1</span></u><br />
-					&nbsp; 101 <br />
-					101<span style="color:green">0</span> &nbsp;&lt;-- the <span style="color:green">0</span> here is the placeholder
-				</p>
-				<p> The next step, as with decimal multiplication, is to add. The results from our previous step indicates that we must add <span style="color:green">101</span> and <span style="color:green">1010</span>, the sum of which is 1111. </p>
-				<p> &nbsp; 101<br />
-					&nbsp;<u> x11</u><br />
-					&nbsp; <span style="color:green">101</span> <br />
-					<span style="color:green"><u>1010</u></span><br />
-					1111
-				</p>
-				<br />
-			</div>
-		</section>
-
-		<section class = "vid_container division">
-			<div class = "container">
-				<div class = "row">
-					<div class = "col-md-4">
-					</div>
-					<div class = "col-md-4">
-						<h2 class = "vid_title"> Binary Division</h2>
-					</div>
-					<div class = "col-md-4">
-					</div>
-				</div>
-				<div class = "row">
-					<div class = "col-md-12">
-							<p class = "vid_brief">To divide two numbers, which result is an exact division, we basically need to follow four steps: division, multiplication, subtraction, and next digit.</p>
-					</div>
-				</div>
-				<div class = "row">
-					<div class = "col-sm-3 col-md-3 col-lg-3"></div>
-					<div class = "col-sm-6 col-md-6 col-lg-6"><div class = "col-sm-3 col-md-3 col-lg-3"></div>
-			  			<div class = "vid_box embed-responsive embed-responsive-16by9" id = "div1">
-							<div class = "vid_label"> <h3>Binary Division</h3> </div>
-							<div class = "vid_overlay overlay_Left">
-							  <div class="vid_text">watch tutorial</div>
-							  <i class="fa fa-play-circle-o"></i>
-							</div>
-						</div>
-						<script>
-							document.getElementById('div1').addEventListener('click', function() {
-								this.innerHTML = '<iframe width="100%" height="300" src="https://www.youtube.com/embed/ubCCemtuZH8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
-							}); 
-						</script>
-					</div>
-					<div class = "col-sm-3 col-md-3 col-lg-3"></div>
-				</div>
-			</div>
-			<hr>
-			<div class = "binary_desc">
-				<p><strong>Binary division</strong> is almost as easy to calculate as multiplying binary numbers, and involves our knowledge of binary multiplication. Be sure to review binary multiplication first.</p>
-				<p>Let's take for example the division of 1011 into 11.</p>
-				<p> &nbsp; &nbsp; &nbsp; &nbsp;<u> &nbsp; &nbsp; <span style="color:red">11</span></u> &nbsp; R=<span style="color:green">10</span><br />
-					&nbsp;<span style="color:blue">11</span> )1011<br />
-					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <u>-11</u><br />
-					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;101<br />
-					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <u>-11</u><br />
-					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color:green">10</span> &lt;-- remainder, R
-				</p>
-				<p> To check our answer, we first multiply our divisor <span style="color:blue">11</span> by our quotient <span style="color:red">11</span>. Then we add its' product to the remainder <span style="color:green">10</span>, and compare it to our dividend of 1011. </p>
-				<p> &nbsp; &nbsp; &nbsp;<span style="color:blue">11</span><br />
-					&nbsp; <u>x <span style="color:red">11</span></u><br />
-					&nbsp; &nbsp; &nbsp;11<br />
-					<u>+ 11 &nbsp;</u><br />
-					&nbsp;1001 &nbsp;&lt;-- product of 11 and 11
-				</p>
-				<p> &nbsp;1001<br />
-					&nbsp;<u>+ &nbsp;<span style="color:green">10</span></u><br />
-					&nbsp;1011 &nbsp;&lt;-- sum of product and remainder
-				</p>
-				<p> The sum is equal to our initial dividend, therefore our solution is correct. </p>
-				<br />
-			</div>
-		</section>
-
-		<section class = "vid_container complement">
-			<div class = "container">
-				<div class = "row">
-					<div class = "col-md-3">
-					</div>
-					<div class = "col-md-6">
-						<h2 class = "vid_title"> Binary Complement</h2>
-					</div>
-					<div class = "col-md-3">
-					</div>
-				</div>
-				<div class = "row">
-				<div class = "col-md-12">
-					 <p class = "vid_brief">To get the two's complement negative notation of an integer, you write out the number in binary. You then invert the digits, and add one to the result.</p>
-				</div>	
-				</div>
-				<div class = "row">
-					<div class = "col-sm-6 col-md-6 col-lg-6">
-			    		<div class = "vid_box embed-responsive embed-responsive-16by9" id = "com1">
-							<div class = "vid_label"> <h3> 1's and 2's Complement</h3> </div>
-							<div class = "vid_overlay overlay_Left">
-							  <div class="vid_text">watch tutorial</div>
-							  <i class="fa fa-play-circle-o"></i>
-							</div>
-						</div>
-						<script>
-							document.getElementById('com1').addEventListener('click', function() {
-								this.innerHTML = '<iframe width="100%" height="300" src="https://www.youtube.com/embed/ubCCemtuZH8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
-							}); 
-						</script>
-					</div>
-					<div class = "col-sm-6 col-md-6 col-lg-6">
-			    		<div class = "vid_box embed-responsive embed-responsive-16by9" id = "com1">
-							<div class = "vid_label"> <h3> Negative Numbers</h3> </div>
-							<div class = "vid_overlay overlay_Left">
-							  <div class="vid_text">watch tutorial</div>
-							  <i class="fa fa-play-circle-o"></i>
-							</div>
-						</div>
-						<script>
-							document.getElementById('com1').addEventListener('click', function() {
-								this.innerHTML = '<iframe width="100%" height="300" src="https://www.youtube.com/embed/4qH4unVtJkE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
-							}); 
-						</script>
-					</div>
-				</div>
-			</div>
-			<hr>
-			<div class = "binary_desc">
-				<h1 style = "text-align: center;"> 1’s and 2’s complement of a Binary Number</h1>
-				<br>
-				<br>
-				<p>1’s complement of a binary number is another binary number obtained by toggling all bits in it, i.e., transforming the 0 bit to 1 and the 1 bit to 0.</p>
-				<p >Example.:</p>
-				<br>
-				<div class = "comp_desc">
-					<i>1's complement of "0111" is "1000"</i>
-					<br>
-					<i>1's complement of "1100" is  "0011"</i> 
-				</div>
-
-				<br/>
-				<br>
-				<br>
-				<p>2’s complement of a binary number is 1 added to the 1’s complement of the binary number.</p>
-				<p>Examples:</p>
-				<br/>
-				<div class = "comp_desc">
-					<i>2's complement of "0111" is  "1001"</i>
-					<br>
-					<i>2's complement of "1100" is  "0100" </i>
-				</div>
-				<br/>
-
-				<p>For one’s complement, we simply need to flip all bits.</p>
-				<br/>
-
-				<p>For 2’s complement, we first find one’s complement. We traverse the one’s complement starting from LSB (least significant bit), and look for 0. We flip all 1’s (change to 0) until we find a 0. Finally, we flip the found 0. For example, 2’s complement of “01000” is “11000” (Note that we first find one’s complement of 01000 as 10111).   If there are all 1’s (in one’s complement), we add an extra 1 in the string. For example, 2’s complement of “000” is “1000” (1’s complement of “000” is “111”).</p>
-				
-				<br/>
-			</div>
-		</section>
-
-		<section class = "vid_container Shifts">
-			<div class = "container">
-				<div class = "row">
-					<div class = "col-md-3">
-					</div>
-					<div class = "col-md-6">
-						<h2 class = "vid_title"> Bit Shifting</h2>
-					</div>
-					<div class = "col-md-3">
-					</div>
-				</div>
-				<div class = "row">
-					<div class = "col-md-12">
-						<p class = "vid_brief">To get the two's complement negative notation of an integer, you write out the number in binary. You then invert the digits, and add one to the result.</p>
-					</div>
-				</div>
-				<div class = "row">
-					<div class = "col-md-1">
-					</div>
-					<div class = "col-md-4">
-			  			<div class = "vid_box embed-responsive embed-responsive-16by9" id = "shift1">
-							<div class = "vid_label"> <h3> Bit Shifts</h3> </div>
-							<div class = "vid_overlay overlay_Left">
-							  <div class="vid_text">watch tutorial</div>
-							   <i class="fa fa-play-circle-o"></i>
-							</div>
-						</div>
-						<script>
-							document.getElementById('shift1').addEventListener('click', function() {
-								this.innerHTML = '<iframe width="100%" height="300" src="https://www.youtube.com/embed/fDKUq38H2jk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
-							}); 
-						</script>
-					</div>
-					<div class = "col-md-2">
-					</div>
-					<div class = "col-md-4">
-			  			<div class = "vid_box embed-responsive embed-responsive-16by9" id = "shift2">
-							<div class = "vid_label"> <h3>Shift Left</h3> </div>
-							<div class = "vid_overlay overlay_Right">
-							  <div class="vid_text">watch tutorial</div>
-							  <i class="fa fa-play-circle-o"></i>
-							</div>
-						</div>
-						<script>
-							document.getElementById('shift2').addEventListener('click', function() {
-								this.innerHTML = '<iframe src="Vids/vid4.mp4" width="100%" height="300" frameborder="0" allowfullscreen="false">';
-							}); 
-						</script>
-					</div>
-					<div class = "col-md-1">
-					</div>
-				</div>
-			</div>
-			<hr>
-			<div class = "binary_desc">
-				<h1 style = "text-align: center; font-weight: 900;">   Bit Shifting</h1>
-				<br>
-				<br>
-				<br>
-
-				<p> A <strong>bit shift</strong> moves each digit in a number's binary representation left or right.</p>
-				<br>
-				<br>
-
-				<h3><strong> Left Shifts </strong>	</h3>
-				<br>
-				<p> When shifting left, the most-significant bit is lost, and a <span math="">0</span> bit is inserted on the other end. </p>
-				<br>
-
-				<div class="clearfix"></div>
-				<div class="clearfix"></div>
-				<div class="clearfix"></div>
-				<div class="clearfix"></div>
-				<div class = "comp_desc" code-block="concept__bit-shift__left-shift-zero-on-end" language="none" translation-highlighting="static" actual-language="none">
-					<i>0010 &lt;&lt; 1  &#8594;  0100</i>
-					<br>
-					<i>0010 &lt;&lt; 2  &#8594;  1000</i>
-				</div>
-				<br>
-				<p> A single left shift multiplies a binary number by 2: </p>
-				
-				<div class = "comp_desc" code-block="concept__bit-shift__single-left-shift-multiplies-by-two" language="none" translation-highlighting="static" actual-language="none">
-					<i>0010 &lt;&lt; 1  &#8594;  0100</i>
-					<br>
-					<br>
-					<i>0010 is 2</i>
-					<br>
-					<i>0100 is 4</i>
-				</div>
-
-				<br>
-				<h3> <strong>   Logical Right Shifts </strong>	</h3>
-				<br>
-				<p> When shifting right with a <strong>logical right shift</strong>, the least-significant bit is lost and a <span math="">0</span> is inserted on the other end. </p>
-				
-				<div code-block="concept__bit-shift__logical-right-shift-zero-on-end" language="none" translation-highlighting="static" actual-language="none">
-					<i>1011 &gt;&gt;&gt; 1  &#8594;  0101</i>
-					<br>
-					<i>1011 &gt;&gt;&gt; 3  &#8594;  0001</i>
-				</div>
-				<p> For positive numbers, a single logical right shift divides a number by 2, throwing out any remainders. </p>
-				<br>
-				
-				<div class = "comp_desc" code-block="concept__bit-shift__single-right-shift-divides-by-two" language="none" translation-highlighting="static" actual-language="none">
-					<i>0101 &gt;&gt;&gt; 1  &#8594;  0010 </i>
-					<br>
-					<br>
-
-					<i>0101 is 5</i>
-						<br>
-					<i>0010 is 2</i>
-				</div>
-				<br>
-				<br>
-
-
-				<h3> <strong>  Arithmetic Right Shifts </strong></h3>
-				<br>
-				<p>
-				    When shifting right with an <strong>arithmetic right
-				    shift</strong>, the least-significant bit is lost and the
-				    most-significant bit is <em>copied</em>.
-				</p>
-				<br>
-				<div class="clearfix"></div>
-				<div class="clearfix"></div>
-				<div class="clearfix"></div>
-				<div class="clearfix"></div>
-				<div class = "comp_desc" code-block="concept__bit-shift__arithmetic-right-shift" language="none" translation-highlighting="static" actual-language="none">
-					<i>1011 &gt;&gt; 1  &#8594;  1101</i>
-					<br>
-					<i>1011 &gt;&gt; 3  &#8594;  1111</i>
-					<br>
-					<i>0011 &gt;&gt; 1  &#8594;  0001</i>
-					<br>
-					<i>0011 &gt;&gt; 2  &#8594;  0000</i>
-				</div>
-				<p>
-				    The first two numbers had a <span math="">1</span> as the most
-				    significant bit, so more <span math="">1</span>'s were inserted
-				    during the shift. The last two numbers had a <span math="">0</span>
-				    as the most significant bit, so the shift inserted
-				    more <span math="">0</span>'s.
-				</p>
-				<p>
-				    If a number is encoded using
-				    <a href="/concept/binary-numbers#twos-complement">
-				        two's complement,
-				    </a> then an arithmetic right shift preserves the number's sign,
-				    while a logical right shift makes the number positive.
-				</p>
-				<div class="clearfix"></div>
-				<div class="clearfix"></div>
-				<div class="clearfix"></div>
-				<div class="clearfix"></div>
-				<div class = "comp_desc" code-block="concept__bit-shift__arithmetic-right-shift-sign-preserve" language="none" translation-highlighting="static" actual-language="none">
-					<i>1011 &gt;&gt; 1  &#8594;  1101</i>
-					<br>
-					<br>
-				    <i>1011 is -5</i>
-				    <br>
-				    <i>1101 is -3</i>
-					<br>
-					<br>
-
-					<i>1111 &gt;&gt;&gt; 1  &#8594;  0111</i>
-					<br><br>
-				    <i>1111 is -1</i>
-				    <br>
-				    <i>0111 is  7</i>
-				</div>
-				<p>
-				    Languages handle arithmetic and logical right shifting in
-				    different ways. <span words="concept__bit-shift__language-right-shifts">Java provides two right shift operators: &gt;&gt; does
-				                an <em>arithmetic</em> right shift and &gt;&gt;&gt;
-				                does a <em>logical</em> right shift.</span>
-				</p>
-			</div>
-		</section>
 
 		<div class="parallax2">
 			
 		</div>
-
+		
 		<section class = "sec" id = "sec3">
 			<div class = "container-fluid">
 				<!-- row 1 -->
@@ -1244,7 +610,7 @@
 					<div class = "col-md-2">
 					</div>
 					<div class = "col-md-8">
-						<h1 id = "basics">Test Your Binary Arithmetic Skills!</h1>
+						<h1 id = "basics">What kind of Farming do you do?</h1>
 					</div>
 					<div class = "col-md-2">
 					</div>
@@ -1252,55 +618,59 @@
 
 				<!-- row 2 -->
 				<div class = "row">
-					<div class = "col-md-5">
+					<div class = "col-md-1">
 					</div>
-					<div class = "col-md-2">
-						<a href = "#sec4">
-							<div class = "butt butt8">No! I think I got it!</div>
-						</a>
+					<div class = "col-md-10">
+						<div class = "basics">Choose the option that best describes your type of Farming</div>
 					</div>
-					<div class = "col-md-5">
+					<div class = "col-md-1">
 					</div>
 				</div>
 
 				<!-- row 3  of buttons-->
 				<div class = "row">
-					<div class = "col-md-2">
-						<div class = "butt butt9">Binary Addition Test</div>
+					<div class = "col-sm-4 col-md-4 col-lg-4">
+						<div class = "farm_box farm_box1" id = "add1">
+							<div class = "farm_overlay overlay_Top">
+							  <div class="farm_text">Crop Farming</div>
+							   <i class="fas fa-leaf"></i>
+							</div>
+						</div>
 					</div>
-					<div class = "col-md-2">
-						<div class = "butt butt10">Binary Subtraction Test</div>
+					<div class = "col-sm-4 col-md-4 col-lg-4">
+						<div class = "farm_box farm_box2" id = "add1">
+							<div class = "farm_overlay overlay_Top">
+							  <div class="farm_text">Poultry Farming</div>
+							   <i class="fas fa-feather-alt"></i>
+							</div>
+						</div>
 					</div>
-					<div class = "col-md-2">
-						<div class = "butt butt11">Binary Multiplication Test</div>
-					</div>
-	        		<div class = "col-md-2">
-						<div class = "butt butt12">Binary Division Test</div>
-					</div>
-	        		<div class = "col-md-2">
-						<div class = "butt butt13">Binary Complement Test</div>
-					</div>
-	        		<div class = "col-md-2">
-						<div class = "butt butt14">Bit Shifting Test</div>
+	        		<div class = "col-sm-4 col-md-4 col-lg-4">
+	        			<div class = "farm_box farm_box3" id = "add1">
+							<div class = "farm_overlay overlay_Top">
+							  <div class="farm_text">Animal Husbandry</div>
+							   <i class="fas fa-horse"></i>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<section class = "vid_container add_test">
+		<section class = "farm_container add_test">
 			<div class = "container">
 				<div class = "row">
 					<div class = "col-md-3">
 					</div>
 					<div class = "col-md-6">
-						<h2 class = "vid_title";"> Binary Addition Test</h2>
+						<h2 class = "farm_title"> Binary Addition Test</h2>
 					</div>
 					<div class = "col-md-3">
 					</div>
 				</div>
 				<div class = "row">
 					<div class = "col-md-12">
-						<p class = "vid_brief">Complete the exercises.</p>
+						<p class = "farm_brief">Complete the exercises.</p>
 					</div>
 				</div>
 			</div>
@@ -1337,20 +707,20 @@
 			</form>
 		</section>
 
-		<section class = "vid_container sub_test">
+		<section class = "farm_container sub_test">
 			<div class = "container">
 				<div class = "row">
 					<div class = "col-md-3">
 					</div>
 					<div class = "col-md-6">
-						<h2 class = "vid_title"> Binary Subtraction Test</h2>
+						<h2 class = "farm_title"> Binary Subtraction Test</h2>
 					</div>
 					<div class = "col-md-3">
 					</div>
 				</div>
 				<div class = "row">
 					<div class = "col-md-12">
-						<p class = "vid_brief">what to do.</p>
+						<p class = "farm_brief">what to do.</p>
 					</div>
 				</div>
 			</div>
@@ -1388,20 +758,20 @@
 			</form>
 		</section>
 
-		<section class = "vid_container mul_test">
+		<section class = "farm_container mul_test">
 			<div class = "container">
 				<div class = "row">
 					<div class = "col-md-3">
 					</div>
 					<div class = "col-md-6">
-						<h2 class = "vid_title"> Binary Multiplication Test</h2>
+						<h2 class = "farm_title"> Binary Multiplication Test</h2>
 					</div>
 					<div class = "col-md-3">
 					</div>
 				</div>
 				<div class = "row">
 					<div class = "col-md-12">
-						<p class = "vid_brief">what to do.</p>
+						<p class = "farm_brief">what to do.</p>
 					</div>
 				</div>
 			</div>
@@ -1438,20 +808,20 @@
 			</form>
 		</section>
 
-		<section class = "vid_container div_test">
+		<section class = "farm_container div_test">
 			<div class = "container">
 				<div class = "row">
 					<div class = "col-md-3">
 					</div>
 					<div class = "col-md-6">
-						<h2 class = "vid_title"> Binary Division Test</h2>
+						<h2 class = "farm_title"> Binary Division Test</h2>
 					</div>
 					<div class = "col-md-3">
 					</div>
 				</div>
 				<div class = "row">
 					<div class = "col-md-12">
-						<p class = "vid_brief">what to do.</p>
+						<p class = "farm_brief">what to do.</p>
 					</div>
 				</div>
 			</div>
@@ -1488,20 +858,20 @@
 			</form>
 		</section>
 
-		<section class = "vid_container com_test">
+		<section class = "farm_container com_test">
 			<div class = "container">
 				<div class = "row">
 					<div class = "col-md-3">
 					</div>
 					<div class = "col-md-6">
-						<h2 class = "vid_title"> Binary Complement Test</h2>
+						<h2 class = "farm_title"> Binary Complement Test</h2>
 					</div>
 					<div class = "col-md-3">
 					</div>
 				</div>
 				<div class = "row">
 					<div class = "col-md-12">
-						<p class = "vid_brief">what to do.</p>
+						<p class = "farm_brief">what to do.</p>
 					</div>
 				</div>
 			</div>
@@ -1549,20 +919,20 @@
 			</form>
 		</section>
 
-		<section class = "vid_container shift_test">
+		<section class = "farm_container shift_test">
 			<div class = "container">
 				<div class = "row">
 					<div class = "col-md-3">
 					</div>
 					<div class = "col-md-6">
-						<h2 class = "vid_title"> Binary Shifting Test</h2>
+						<h2 class = "farm_title"> Binary Shifting Test</h2>
 					</div>
 					<div class = "col-md-3">
 					</div>
 				</div>
 				<div class = "row">
 					<div class = "col-md-12">
-						<p class = "vid_brief">what to do.</p>
+						<p class = "farm_brief">what to do.</p>
 					</div>
 				</div>
 			</div>
@@ -1603,627 +973,6 @@
 
 		</div>
 
-		<section class = "sec"  id = "sec4">
-			<div class = "container-fluid">
-				<!-- row 1 -->
-				<div class = "row">
-					<div class = "col-md-2">
-					</div>
-					<div class = "col-md-8">
-						<h1 id = "basics">Usigned Binary Multiplication</h1>
-					</div>
-					<div class = "col-md-2">
-					</div>
-				</div>
-
-				<!-- row 2 -->
-				<div class = "row">
-					<div class = "col-md-2">
-					</div>
-					<div class = "col-md-8">
-						<h1 id = "basics">How does Booth's Algorithm work for Unsigned Binary Multiplication?</h1>
-					</div>
-					<div class = "col-md-2">
-					</div>
-				</div>
-
-				<!-- row 3 of buttons-->
-				<div class = "row">
-					<div class = "col-md-2">
-					</div>
-					<div class = "col-md-2">
-						<div class = "butt butt15">Booth's Algorithm</div>
-					</div>
-					<div class = "col-md-2">
-						<div class = "butt butt16">Example 1</div>
-					</div>
-	        		<div class = "col-md-2">
-						<div class = "butt butt17">Example 2</div>
-					</div>
-					<div class = "col-md-2">
-						<div class = "butt butt18">Example 3</div>
-					</div>
-					<div class = "col-md-2">
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<section class = "vid_container Unsigned_mul">
-			<div class = "container">
-				<div class = "row">
-					<div class = "col-md-1">
-					</div>
-					<div class = "col-md-10">
-						<h2 class = "vid_title"> Unsigned Binary Multiplication</h2>
-					</div>
-					<div class = "col-md-1">
-					</div>
-				</div>
-				<div class = "row">
-					<div class = "col-md-12">
-						<p class = "vid_brief">Booth algorithm gives a procedure for multiplying binary integers in signed 2’s complement representation in efficient way, i.e., less number of additions/subtractions required. It operates on the fact that strings of 0’s in the multiplier require no addition but just shifting and a string of 1’s in the multiplier from bit weight 2^k to weight 2^m can be treated as 2^(k+1 ) to 2^m.</p>
-					</div>
-				</div>
-				<div class = "row">
-					<div class = "col-sm-4 col-md-4 col-lg-4">
-						<div class = "vid_box embed-responsive embed-responsive-16by9" id = "umul1">
-							<div class = "vid_label"> <h3>5 * -3 </h3> </div>
-							<div class = "vid_overlay overlay_Left">
-							  <div class="vid_text">watch tutorial</div>
-							   <i class="fa fa-play-circle-o"></i>
-							</div>
-						</div>
-						<script>
-							document.getElementById('umul1').addEventListener('click', function() {
-								this.innerHTML = '<iframe width="100%" height="300" src="https://www.youtube.com/embed/NSzKlY-6tcQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
-							}); 
-						</script>
-					</div>
-				</div>
-			</div>
-			<hr>
-			<div class = "binary_desc">
-				<h1>Booth's Algrithm</h1>
-				<br/>
-				<br/>
-				<p>
-					We name the register as A, B and Q, AC, BR and QR respectively. Qn designates the least significant bit of multiplier in the register QR. An extra flip-flop Qn+1is appended to QR to facilitate a double inspection of the multiplier. Qn+1 is appended to QR to facilitate a double inspection of the multiplier. The flowchart for the booth algorithm is shown below.
-				</p>
-				<br/>
-				<br/>
-				<h2>Booth's Algorithm Flowchart</h2>
-				<br/>
-				<br/>
-				<img src="img/Boot1.png" style = "height: 40%; width: 40%;">
-
-				<br/>
-				<br/>
-				<p> 
-					AC and the appended bit Qn+1 are initially cleared to 0 and the sequence SC is set to a number n equal to the number of bits in the multiplier. The two bits of the multiplier in Qn and Qn+1are inspected. If the two bits are equal to 10, it means that the first 1 in a string has been encountered. This requires subtraction of the multiplicand from the partial product in AC. If the 2 bits are equal to 01, it means that the first 0 in a string of 0’s has n = been encountered. This requires the addition of the multiplicand to the partial product in AC.
-				</p>	
-				<p>
-					When the two bits are equal, the partial product does not change. An overflow cannot occur because the addition and subtraction of the multiplicand follow each other. As a consequence, the 2 numbers that are added always have a opposite signs, a condition that excludes an overflow. The next step is to shift right the partial product and the multiplier (including Qn+1). This is an arithmetic shift right (ashr) operation which AC and QR ti the right and leaves the sign bit in AC unchanged. The sequence counter is decremented and the computational loop is repeated n times.
-				</p>
-				<br/>
-			</div>
-		</section>
-
-		<section class = "vid_container mul_ex1">
-			<div class = "container">
-				<div class = "row">
-					<div class = "col-md-1">
-					</div>
-					<div class = "col-md-10">
-						<h1 class = "vid_title";"> Booth's Algorithm Example 1</h1>
-					</div>
-					<div class = "col-md-1">
-					</div>
-				</div>
-				<div class = "row">
-					<div class = "col-md-12">
-						<h3 class = "vid_brief">Table Showing the Booth's Algorithm Process for -5 * 3</h3>
-					</div>
-				</div>
-			</div>
-			<hr>
-			<div class ="table_cont">
-				<table class = "table-responsive" id="customers">
-				  	<tr>
-					    <th>A</th>
-					    <th>Q</th>
-					    <th>Q-1</th>
-					    <th>M</th>
-					    <th>Operation</th>
-					    <th>Cycle</th>
-					</tr>
-					<tr>
-					    <td>0000</td>
-					    <td>0011</td>
-					    <td>0</td>
-					    <td>1011</td>
-					    <td></td>
-					    <td></td>
-					</tr>
-					<tr>
-					    <td>0101</td>
-					    <td>0011</td>
-					    <td>1</td>
-					    <td>1011</td>
-					    <td>A - M</td>
-					    <td>1st Cycle</td>
-					</tr>
-					<tr>
-					    <td>0010</td>
-					    <td>1001</td>
-					    <td>1</td>
-					    <td>1011</td>
-					    <td></td>
-					    <td>shift</td>
-					</tr>
-					<tr>
-					    <td>0001</td>
-					    <td>0100</td>
-					    <td>1</td>
-					    <td>1011</td>
-					    <td>Shift</td>
-					    <td>2nd Cycle</td>
-					</tr>
-					<tr>
-					    <td>1100</td>
-					    <td>0100</td>
-					    <td>1</td>
-					    <td>1011</td>
-					    <td>A + M</td>
-					    <td>3rd Cycle</td>
-					</tr>
-					<tr>
-					    <td>1110</td>
-					    <td>0100</td>
-					    <td>0</td>
-					    <td>1011</td>
-					    <td></td>
-					    <td>shift</td>
-					</tr>
-					<tr>
-					    <td>1111</td>
-					    <td>0001</td>
-					    <td>0</td>
-					    <td>1011</td>
-					    <td>Shift</td>
-					    <td>4th Cycle</td>
-					</tr>
-					
-				</table>
-			</div>
-		</section>
-
-		<section class = "vid_container mul_ex2">
-			<div class = "container">
-				<div class = "row">
-					<div class = "col-md-1">
-					</div>
-					<div class = "col-md-10">
-						<h1 class = "vid_title";"> Booth's Algorithm Example 2</h1>
-					</div>
-					<div class = "col-md-1">
-					</div>
-				</div>
-				<div class = "row">
-					<div class = "col-md-12">
-						<h3 class = "vid_brief">Table Showing the Booth's Algorithm Process for -5 * -3</h3>
-					</div>
-				</div>
-			</div>
-			<hr>
-			<div class ="table_cont">
-				<table class = "table-responsive" id="customers">
-				  	<tr>
-					    <th>A</th>
-					    <th>Q</th>
-					    <th>Q-1</th>
-					    <th>M</th>
-					    <th>Operation</th>
-					    <th>Cycle</th>
-					</tr>
-					<tr>
-					    <td>0000</td>
-					    <td>1011</td>
-					    <td>0</td>
-					    <td>0011</td>
-					    <td></td>
-					    <td></td>
-					</tr>
-					<tr>
-					    <td>1101</td>
-					    <td>1011</td>
-					    <td>0</td>
-					    <td>0011</td>
-					    <td>A - M</td>
-					    <td>1st Cycle</td>
-					</tr>
-					<tr>
-					    <td>1110</td>
-					    <td>1101</td>
-					    <td>1</td>
-					    <td>0011</td>
-					    <td></td>
-					    <td>shift</td>
-					</tr>
-					<tr>
-					    <td>1111</td>
-					    <td>0110</td>
-					    <td>1</td>
-					    <td>0011</td>
-					    <td>Shift</td>
-					    <td>2nd Cycle</td>
-					</tr>
-					<tr>
-					    <td>0010</td>
-					    <td>0110</td>
-					    <td>1</td>
-					    <td>0011</td>
-					    <td>A + M</td>
-					    <td>3rd Cycle</td>
-					</tr>
-					<tr>
-					    <td>0001</td>
-					    <td>0011</td>
-					    <td>0</td>
-					    <td>0011</td>
-					    <td></td>
-					    <td>shift</td>
-					</tr>
-					<tr>
-					    <td>1110</td>
-					    <td>0011</td>
-					    <td>0</td>
-					    <td>0011</td>
-					    <td>A - M</td>
-					    <td>4th Cycle</td>
-					</tr>
-					<tr>
-					    <td>1111</td>
-					    <td>0001</td>
-					    <td>1</td>
-					    <td>0011</td>
-					    <td></td>
-					    <td>shift</td>
-					</tr>
-				</table>
-			</div>
-		</section>
-
-		<section class = "vid_container mul_ex3">
-			<div class = "container">
-				<div class = "row">
-					<div class = "col-md-1">
-					</div>
-					<div class = "col-md-10">
-						<h1 class = "vid_title";"> Booth's Algorithm Example 3</h1>
-					</div>
-					<div class = "col-md-1">
-					</div>
-				</div>
-				<div class = "row">
-					<div class = "col-md-12">
-						<h3 class = "vid_brief">Table Showing the Booth's Algorithm Process for -3 * -5</h3>
-					</div>
-				</div>
-			</div>
-			<hr>
-			<div class ="table_cont">
-				<table class = "table-responsive" id="customers">
-				  	<tr>
-					    <th>A</th>
-					    <th>Q</th>
-					    <th>Q-1</th>
-					    <th>M</th>
-					    <th>Operation</th>
-					    <th>Cycle</th>
-					</tr>
-					<tr>
-					    <td>0000</td>
-					    <td>1101</td>
-					    <td>0</td>
-					    <td>1011</td>
-					    <td></td>
-					    <td></td>
-					</tr>
-					<tr>
-					    <td>0101</td>
-					    <td>1101</td>
-					    <td>0</td>
-					    <td>1011</td>
-					    <td>A - m</td>
-					    <td>1st Cycle</td>
-					</tr>
-					<tr>
-					    <td>0010</td>
-					    <td>1110</td>
-					    <td>1</td>
-					    <td>1011</td>
-					    <td></td>
-					    <td>shift</td>
-					</tr>
-					<tr>
-					    <td>1101</td>
-					    <td>1110</td>
-					    <td>1</td>
-					    <td>1011</td>
-					    <td>A + M</td>
-					    <td>2nd Cycle</td>
-					</tr>
-					<tr>
-					    <td>0011</td>
-					    <td>1111</td>
-					    <td>0</td>
-					    <td>1011</td>
-					    <td>A - M</td>
-					    <td>3rd Cycle</td>
-					</tr>
-					<tr>
-					    <td>0001</td>
-					    <td>1111</td>
-					    <td>1</td>
-					    <td>1011</td>
-					    <td></td>
-					    <td>shift</td>
-					</tr>
-					<tr>
-					    <td>0000</td>
-					    <td>1111</td>
-					    <td>1</td>
-					    <td>1011</td>
-					    <td>Shift</td>
-					    <td>4th Cycle</td>
-					</tr>
-				</table>
-			</div>
-		</section>
-
-		<div class="parallax4">
-
-		</div>
-
-		<section class = "sec"  id = "sec5">
-			<div class = "container-fluid">
-				<!-- row 1 -->
-				<div class = "row">
-					<div class = "col-md-2">
-					</div>
-					<div class = "col-md-8">
-						<h1 id = "basics">Usigned Binary Division</h1>
-					</div>
-					<div class = "col-md-2">
-					</div>
-				</div>
-
-				<!-- row 2 -->
-				<div class = "row">
-					<div class = "col-md-2">
-					</div>
-					<div class = "col-md-8">
-						<h1 id = "basics">How does Restoring Division Algorithm work for unsigned binary?</h1>
-					</div>
-					<div class = "col-md-2">
-					</div>
-				</div>
-
-				<!-- row 3  of buttons-->
-				<div class = "row">
-					<div class = "col-md-3">
-					</div>
-					<div class = "col-md-2">
-						<div class = "butt butt19">How It Works</div>
-					</div>
-					<div class = "col-md-2">
-						<div class = "butt butt20">Example 1</div>
-					</div>
-	        		<div class = "col-md-2">
-						<div class = "butt butt21">Example 2</div>
-					</div>
-					<div class = "col-md-3">
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<section class = "vid_container Unsigned_div">
-			<div class = "container">
-				<div class = "row">
-					<div class = "col-md-3">
-					</div>
-					<div class = "col-md-6">
-						<h2 class = "vid_title"> Unsigned Binary Division</h2>
-					</div>
-					<div class = "col-md-3">
-					</div>
-				</div>
-				<div class = "row">
-					<div class = "col-md-12">
-						<p class = "vid_brief"></p>
-					</div>
-				</div>
-				<div class = "row">
-					<div class = "col-sm-4 col-md-4 col-lg-4">
-						<div class = "vid_box embed-responsive embed-responsive-16by9" id = "udiv1">
-							<div class = "vid_label"> <h3>5 * -3 </h3> </div>
-							<div class = "vid_overlay overlay_Left">
-							  <div class="vid_text">watch tutorial</div>
-							   <i class="fa fa-play-circle-o"></i>
-							</div>
-						</div>
-						<script>
-							document.getElementById('udiv1').addEventListener('click', function() {
-								this.innerHTML = '<iframe width="100%" height="300" src="https://www.youtube.com/embed/PzV6gYpVLuc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
-							}); 
-						</script>
-					</div>
-				</div>
-			</div>
-			<hr>
-			<div class = "binary_desc">
-				<h1>Booth's Algrithm</h1>
-				<br/>
-				<br/>
-				<p>
-					A division algorithm provides a quotient and a remainder when we divide two number. They are generally of two type slow algorithm and fast algorithm. Slow division algorithm are restoring, non-restoring, non-performing restoring, SRT algorithm and under fast comes Newton–Raphson and Goldschmidt.
-				</p>
-				<br/>
-				<br/>
-
-				<p>
-					Here, register Q contain quotient and register A contain remainder. Here, n-bit dividend is loaded in Q and divisor is loaded in M. Value of Register is initially kept 0 and this is the register whose value is restored during iteration due to which it is named Restoring.
-				</p>
-				<br><br>
-				<h2>Restoring Division Algorithm Flowchart</h2>
-				<br/>
-				<br/>
-				<img src="img/bin_div.png" style = "height: 40%; width: 60%;">
-
-				<br/>
-				<br/>
-				<p>Let's See the steps involed.</p>
-				<br>
-				<ol>
-					<li>First the registers are initialized with corresponding values (Q = Dividend, M = Divisor, A = 0, n = number of bits in dividend)</li>
-					<li>Then the content of register A and Q is shifted right as if they are a single unit</li>
-					<li>Then content of register M is subtracted from A and result is stored in A</li>
-					<li>
-						Then the most significant bit of the A is checked if it is 0 the least significant bit of Q is set to 1 otherwise if it is 1 the least significant bit of Q is set to 0 and value of register A is restored i.e the value of A before the subtraction with M
-					</li>
-					<li>The value of counter n is decremented</li>
-					<li>If the value of n becomes zero we get of the loop otherwise we repeat fro step 2</li>
-					<l>Finally, the register Q contain the quotient and A contain remainder</l>
-				</ol>
-				
-				<br/>
-			</div>
-		</section>
-
-		<section class = "vid_container div_ex1">
-			<div class = "container">
-				<div class = "row">
-					<div class = "col-md-3">
-					</div>
-					<div class = "col-md-6">
-						<h2 class = "vid_title";">Restore Algorithm Example 1 </h2>
-					</div>
-					<div class = "col-md-3">
-					</div>
-				</div>
-				<div class = "row">
-					<div class = "col-md-12">
-						<p class = "vid_brief">Watch video</p>
-					</div>
-				</div>
-			</div>
-			<hr>
-
-			<div class = "row">
-				<div class = "col-sm-3 col-md-3 col-lg-3"> </div>
-				<div class = "col-sm-6 col-md-6 col-lg-6">
-					<div class = "vid_box embed-responsive embed-responsive-16by9" id = "udiv2">
-						<div class = "vid_label"> <h3>6 + 3 </h3> </div>
-						<div class = "vid_overlay overlay_Left">
-						  <div class="vid_text">watch tutorial</div>
-						   <i class="fa fa-play-circle-o"></i>
-						</div>
-					</div>
-					<script>
-						document.getElementById('udiv2').addEventListener('click', function() {
-							this.innerHTML = '<iframe width="100%" height="300" src="https://www.youtube.com/embed/PzV6gYpVLuc?start=237" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
-						}); 
-					</script>
-				</div>
-				<div class = "col-sm-3 col-md-3 col-lg-3"> </div>
-			</div>
-			
-		</section>
-
-		<section class = "vid_container div_ex2">
-			<div class = "container">
-				<div class = "row">
-					<div class = "col-md-3">
-					</div>
-					<div class = "col-md-6">
-						<h2 class = "vid_title";"> Restore Algorithm Example 2</h2>
-					</div>
-					<div class = "col-md-3">
-					</div>
-				</div>
-				<div class = "row">
-					<div class = "col-md-12">
-						<p class = "vid_brief">Watch Video</p>
-					</div>
-				</div>
-				
-			<hr>
-
-			<div class = "row">
-				<div class = "col-sm-3 col-md-3 col-lg-3"> </div>
-				<div class = "col-sm-6 col-md-6 col-lg-6">
-					<div class = "vid_box embed-responsive embed-responsive-16by9" id = "udiv3">
-						<div class = "vid_label"> <h3>6 + 3 </h3> </div>
-						<div class = "vid_overlay overlay_Left">
-						  <div class="vid_text">watch tutorial</div>
-						   <i class="fa fa-play-circle-o"></i>
-						</div>
-					</div>
-					<script>
-						document.getElementById('udiv3').addEventListener('click', function() {
-							this.innerHTML = '<iframe width="100%" height="300" src="https://www.youtube.com/embed/zVestoCRRbM?start=237" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
-						}); 
-					</script>
-				</div>
-				<div class = "col-sm-3 col-md-3 col-lg-3"> </div>
-			</div>
-			
-		</section>
-
-		<div class="parallax4">
-
-		</div>
-
-		<section class = "sec members">
-			<div class = "container">
-				<h2>Meet The Team</h2>
-				
-				<br>
-
-				<div class="row">
-				  <div class="column">
-				    <div class="card">
-				      <img src="img/lee.png" alt="Jane" style="width:100%; height: 300px">
-				      <div class="container_pic">
-				        <h2>Lee Daniel</h2>
-				        <p class="title">Lead Programmer</p>
-				      </div>
-				    </div>
-				  </div>
-
-				  <div class="column">
-				    <div class="card">
-				      <img src="img/israel.png" alt="Mike" style="width:100%; height: 300px">
-				      <div class="container_pic">
-				        <h2>Israel</h2>
-				        <p class="title">Content Manager</p>
-				      </div>
-				    </div>
-				  </div>
-				  <div class="column">
-				    <div class="card">
-				      <img src="img/abra.png" alt="John" style="width:100%; height: 300px">
-				      <div class="container_pic">
-				        <h2>Abrahim</h2>
-				        <p class="title">Video Editor</p>
-				      </div>
-				    </div>
-				  </div>
-				</div>
-			</div>
-		</section>
 
 		<script type = "text/javascript">
 			function openNav() {

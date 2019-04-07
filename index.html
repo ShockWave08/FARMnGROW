@@ -1,0 +1,2565 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<title> Binary Arithmetics </title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="Keywords" content="">
+		<meta name="Description" content="">
+		<meta name= "author" content= "Lee Daniel">
+
+		<link rel="stylesheet" type="text/css" href="reset.css">
+
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+		<link rel="stylesheet" href="Css/bootstrap.validate.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		
+		<link href="https://fonts.googleapis.com/css?family=Capriola|Open+Sans|Righteous|Roboto" rel="stylesheet">
+		
+  		<!-- jQuery library -->
+		<script src="Js/jquery-3.3.1.min.js"></script>
+
+  		<script type="text/javascript" src="Js/bootstrap.validate.min.js"> </script>
+		
+		<script src = "js/modernizr.custom.js"></script>
+
+
+		<style media="screen">
+
+			*{
+			  -webkit-box-sizing: border-box;
+			  -moz-box-sizing: border-box;
+			  -o-box-sizing: border-box;
+			  -ms-box-sizing: border-box;
+			  box-sizing: border-box;
+			}
+
+			html, body{
+				height: 100%;
+				width: 100%;
+				margin: 0;
+				padding: 0;
+				line-height: 180%;
+				color: #666;
+				text-align: center;
+				transition: all 0.5s ease;
+			}
+
+			.parallax1{
+				background-image: url("img/bg2.jpg");
+				min-height: 100%;
+			}
+
+			.parallax2{
+			   background-image: url("img/img-12.jpg");
+			   min-height: 60%;
+			}
+
+			.parallax3{
+			   background-image: url("img/bg1.jpg");
+			   min-height: 40%;
+			}
+
+			.parallax4{
+			  background-image: url("img/img-12.jpg");
+			  min-height: 100%;
+			}
+
+
+			.parallax1, .parallax2, .parallax3, .parallax4{
+			  position: relative;
+			  opacity: .75;
+			  background-position: center;
+			  -webkit-background-size: cover;
+			  -moz-background-size: cover;
+			  -o-background-size: cover;
+			  background-size: cover;
+			  background-repeat: no-repeat;
+			  background-attachment: fixed;
+			}
+
+			#logo{
+				position: fixed;
+				height: auto;
+				width: auto;
+				z-index: 10;
+				padding: 8px 8px 0 8px;
+				margin:auto;
+				vertical-align: middle;
+				top: 3%;
+				left: 5%;
+				border: 5px solid #fff;
+				border-radius: 5%;
+				font-family: 'Righteous', cursive;
+			}
+
+			#logo p{
+			  font-size: 1.5em;
+			  text-transform:capitalize;
+			  text-align: center;
+			  letter-spacing: 0.1em;
+			  font-weight: 900;
+			  color: #fff;
+			 }
+
+			#menu{
+			 position: fixed;
+			 top: 3%;
+			 right: 3%;
+			 width: auto;
+			 height: auto;
+			 cursor: pointer;
+			 z-index: 10;
+			}
+
+			.menu_icon {
+			  height: 50px;
+			  width: 50px;
+			   display: inline-block;
+			  vertical-align: middle;
+			  border: 3px solid #fff;
+			  border-radius: 50%;
+			  -moz-border-radius: 50%;
+			  -webkit-border-radius: 50%;
+			  -ms-transform: rotate(-180deg);
+			  -moz-transform: rotate(-180deg);
+			  -webkit-transform: rotate(-180deg);
+			   transform: rotate(-180deg);
+			  transition-timing-function: ease-in-out;
+			  -webkit-transition-delay: 0.1s; /* Safari */
+			   transition-delay: 0.1s;
+			  transition-duration: 0.4s;
+			  -webkit-transition-duration: 0.4s;
+			  -moz-transition-duration: 0.4s;
+			}
+
+			.menu_icon:hover{
+				border: 1px solid #fff;
+				padding: 5.4px 0 0 3px;
+				-ms-transform: rotate(180deg);
+				-webkit-transform: rotate(180deg);
+				transform: rotate(180deg);
+				-ms-transform: scale(1.3);
+				-moz-transform: scale(1.3);
+				-webkit-transform: scale(1.3);
+				transform: scale(1.3);
+				transition-timing-function: ease-in-out;
+				-webkit-transition-delay: 0.1s; /* Safari */
+				transition-delay: 0.1s;
+				transition-duration: 0.4s;
+			}
+
+			.bar1, .bar3 {
+			   width: 16px;
+			   height: 1px;
+			   background-color: #fff;
+			   margin: 15px 0 0 12px;
+			}
+
+			.bar3 {
+				margin: 6px 0 0 12px;
+			}
+
+			/* Navigation Item Animation */
+			div.borderXwidth a:before, div.borderXwidth a:after
+			{
+			   position: absolute;
+			   opacity: 0;
+			   width: 0%;
+			   height: 2px;
+			   content: '';
+			   background: #FFF;
+			   transition: all 0.8s;
+			}
+
+			div.borderXwidth a:before
+			{
+			   left: 0px;
+			   top: 0px;
+			}
+
+			div.borderXwidth a:after
+			{
+			   right: 0px;
+			   bottom: 0px;
+			}
+
+			div.borderXwidth a:hover:before, div.borderXwidth a:hover:after
+			{
+			   opacity: 1;
+			   width: 100%;
+			}
+
+			.overlay {
+				 height: 0%;
+				 width: 100%;
+				 position: fixed;
+				 z-index: 1000;
+				 bottom: 0;
+				 left: 0;
+				 background-color: rgb(0,0,0);
+				 background-color: rgba(0,0,0, 0.9);
+				 overflow-y: hidden;
+				 transition: 0.5s;
+			}
+
+			.overlay-content {
+				 position: relative;
+				 top: 25%;
+				 width: 100%;
+				 text-align: center;
+				 margin-top: 30px;
+			}
+
+			.overlay a {
+				 padding: 8px;
+				 text-decoration: none;
+				 font-size: 36px;
+				 color: #818181;
+				 display: block;
+				 transition: 0.3s;
+			}
+
+			.overlay a:hover, .overlay a:focus {
+			 	color: #f1f1f1;
+			}
+
+			.overlay .closebtn {
+				 position: absolute;
+				 top: 20px;
+				 right: 45px;
+				 font-size: 60px;
+			}
+
+			@media screen and (max-height: 450px) {
+			 .overlay {overflow-y: auto;}
+			 .overlay a {font-size: 20px}
+			 .overlay .closebtn {
+			   font-size: 40px;
+			   top: 15px;
+			   right: 35px;
+			   }
+			}
+
+			.heading{
+			  position: absolute;
+			  color: #fff;
+			  top: 58%;
+			  width: 100%;
+			  font-size: 550%;
+			  font-family: 'Capriola', sans-serif;
+			  text-transform: uppercase;
+			  letter-spacing: 8px;
+			  font-weight: 800px;
+			  text-shadow: 0 0 10px #000;
+			  line-height: 40px;
+			}
+
+			.opt_butt1{
+			  position: absolute;
+			  color: #fff;
+			  font-family: 'Capriola', sans-serif;
+			  font-weight: 600 !important;
+			  display: inline-block;
+			  height: 50px;
+			  line-height: 40px;
+			  text-align: center;
+			  padding: 0 20px;
+			  cursor: pointer;
+			  bottom: 23%;
+			  border: 3px solid #fff;
+			  border-radius: 10px 10px;
+			  -moz-border-radius: 10px 10px;
+			  -webkit-border-radius: 10px 10px;
+			  -o-border-radius: 10px 10px;
+			  transition: 0.7s;
+			  -webkit-transition: 0.7s;
+			  -moz-transition: 0.7s;
+			  -o-transition: 0.7s;
+			}
+
+			.opt_butt1:hover{
+			  border: 3px solid #fff;
+			  border-top-color: #FF7F50;
+			  border-bottom-color: #00CED1;
+			  border-right-color: #FF7F50;
+			  border-left-color: #00CED1;
+			  color: #fff;
+			  box-shadow: 4px 4px 2px 2px rgba(0, 0, 0, 0.3);
+			  -webkit-transition: 0.7s;
+			  -moz-transition: 0.7s;
+			  -o-transition: 0.7s;
+			  transition: 0.7s;
+			}
+
+			.opt_butt1::before, .opt_butt1::after{
+			  width: 100%;
+			  height:100%;
+			  z-index: 3;
+			  content: '';
+			  position: absolute;
+			  top:0;
+			  left:0;
+			  box-sizing: border-box;
+			  transform: scale(0);
+			  -webkit-transform: scale(0);
+			  -moz-transform: scale(0);
+			  -o-transform: scale(0);
+			  -webkit-transition: 0.7s;
+			  -moz-transition: 0.7s;
+			  -o-transition: 0.7s;
+			  transition: 0.7s;
+			}
+
+			.anim1_butt::before{
+			  border-bottom: 3px solid #00CED1;
+			  border-left: 3px solid #00CED1;
+			  transform-origin: 100% 0%;
+			  -webkit-transform-origin: 100% 0%;
+			  -moz-transform-origin: 100% 0%;
+			  -o-transform-origin: 100% 0%;
+			}
+
+
+			.anim1_butt::after{
+				border-top: 3px solid #FF7F50;
+				border-right: 3px px solid #FF7F50;
+				transform-origin: 0% 100%;
+				-webkit-transform-origin: 0% 100%;
+				-moz-transform-origin: 0% 100%;
+				-o-transform-origin: 0% 100%;
+			}
+
+			.opt_butt1:hover::after, .opt_butt1:hover::before{
+			  border-radius: 10px 10px;
+			  -moz-border-radius: 10px 10px;
+			  -webkit-border-radius: 10px 10px;
+			  -o-border-radius: 10px 10px;
+			  transform: scale(1);
+			  -webkit-transform: scale(1);
+			  -moz-transform: scale(1);
+			  -o-transform: scale(1);
+			}
+
+			.butt_col1:hover{
+			  color: #00CED1;
+			}
+
+			.butt_col2:hover{
+			  color: #FF7F50;
+			}
+
+			.sec{
+				background-color: rgba(255, 127, 80, 0.8);
+				box-shadow: 6px 6px 5px #696969;
+				color: #fff;
+				height: auto;
+				min-width: 100%;
+				font-family: Capriola, sans-serif;
+				font-weight: 900;
+			}
+
+			.basics{
+				font-family: Capriola, sans-serif;
+				font-weight: 900;
+				font-size: 2em;
+			}
+
+			.butt{
+				border: 2px solid #00CED1;
+				background-color: #fff;
+				margin: 20px 0;
+				border-radius: 25px;
+				color: #00CED1;
+				cursor: pointer;
+			}
+
+			.butt:hover{
+				border: 2px solid #fff;
+				background-color: #00CED1;
+				box-shadow: 6px 6px 5px #696969;
+				color: #fff;
+			}
+
+			.butt_hover{
+				border: 2px solid #fff;
+				background-color: #00CED1;
+				box-shadow: 6px 6px 5px #696969;
+				color: #fff;
+			}
+
+			a{
+				text-decoration: none;
+			}
+
+			.vid_container{
+				background-color: rgba(255, 127, 80, 0.8);
+				display: none;
+				margin: 0;
+				padding: 0 0 3% 0;
+			}
+
+			.vid_box{
+				position: relative;
+				height: 300px;
+				width: 95%;
+				border: 2px solid #fff;
+				margin-bottom: 20px;
+				border-radius: 25px;
+				background-color: rgba(0, 206, 209, 0.6);
+				color: white;
+			}
+
+			.vid_box:hover{
+				box-shadow: 5px 5px 6px #696969;
+			}
+
+			.vid_label h3{
+				position: relative;
+				padding-top: 30%;
+				color: #fff;
+				font-size: 2em;
+				font-family: Capriola, sans-serif;
+				text-align: center;
+				font-weight: 900;
+			}
+
+			.vid_overlay{
+				position: absolute;
+				cursor: pointer;
+				transition: all 0.5s ease;
+				background:  rgba(0, 0, 0, 0.6);
+				opacity: 0;
+				border-radius: 25px;
+			}
+
+			.vid_box:hover .vid_overlay{
+				opacity: 1;
+			}
+
+			.vid_title{
+				color: #fff;
+				font-size: 3em;
+				font-family: Capriola, sans-serif;
+				margin-bottom: 5%;
+			}
+
+			.vid_brief{
+				color: #fff;
+				font-size: 1.5em;
+				font-family: Roboto, sans-serif;
+				margin-bottom: 5%;
+			}
+
+			.vid_text{
+				color: #fff;
+				font-family: sans-serif;
+				font-weight: 600;
+				position: absolute;
+				top: 30%;
+				left: 50%;
+				transform: translate(-50%,-50%);
+				font-size: 20px;
+			}
+
+			.fa{
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-50%);
+				font-size: 84px;
+				color: #fff;
+				cursor: pointer;
+			}
+
+			.fa:hover{
+				text-shadow: 5px 5px 4px rgba(255, 255, 255, 0.4);
+			}
+
+			.overlay_Left{
+				height: 100%;
+				width: 0;
+				top: 0;
+				left: 0;
+			}
+
+			.overlay_Top{
+				height: 0;
+				width: 100%;
+				top: 0;
+			}
+
+			.overlay_Right{
+				height: 100%;
+				width: 0;
+				top: 0;
+				right: 0;
+			}
+
+			.vid_box:hover .overlay_Left{
+				width: 100%;
+			}
+
+			.vid_box:hover .overlay_Top{
+				height: 100%;
+			}
+
+			.vid_box:hover .overlay_Right{
+				width: 100%;
+			}
+
+			.binary_desc{
+				text-align: left;
+				color: #fff;
+				font-size: 20px;
+				font-family: Roboto, sans-serif;
+				margin: 0;
+				font-weight: 500;
+				padding: 2% 10%;
+			}
+
+			hr{
+				border-top: 2px solid #fff;
+				width: 70%;
+				margin-top: 2%;
+			}
+
+			.form_design{
+				height: auto;
+				width: auto;
+				padding: 3% 0;
+
+			}
+
+			input[type = "text"]{
+				box-sizing: border-box;
+				box-shadow: none;
+			}
+
+			.control-label{
+				color: #fff;
+				font-family: Roboto, sans-serif;
+				font-size: 1.5em;
+				font-weight: 600;
+			}
+
+			.comp_desc{
+				 background-color: rgba(0, 0, 0, 0.6); 
+				 border: 1px solid rgba(255, 255, 255, 0.7); 
+				 width: 25%;
+				 border-radius: 25px;
+				 padding-left: 2%;
+				 line-height: 40px;
+			}
+
+			#arithmetic_test .form-horizontal .has-feedback .form-control-feedback {
+				top: 0;
+				right: -30px;
+			}
+
+			form{	
+				margin: 0;
+				padding: 0;
+			}
+
+			section{
+				padding: 0;
+				margin: 0;
+			}
+
+			#customers{
+				width: 70%;
+				left: 50%;
+			}
+
+			#customers td, #customers th {
+				border: 1px solid #ddd;
+				padding: 8px;
+			}
+
+			#customers tr:nth-child(even){
+				background-color: #f2f2f2;
+			}
+
+			#customers tr:hover {
+				background-color: #ddd;
+			}
+
+			#customers th {
+				padding-top: 12px;
+				padding-bottom: 12px;
+				text-align: left;
+				background-color: #4CAF50;
+				color: white;
+			}
+
+			.table_cont{
+				padding: 3% 7%;
+				width: 100%;
+				border: 1ps solid red;
+			}
+
+			.column {
+			  float: left;
+			  width: 33.3%;
+			  margin-bottom: 16px;
+			  padding: 0 8px;
+			}
+
+			@media screen and (max-width: 650px) {
+			  .column {
+			    width: 100%;
+			    display: block;
+			  }
+			}
+
+			.card {
+			  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+			}
+
+			.container_pic {
+			  padding: 0 16px;
+			}
+
+			.container_pic::after, .row::after {
+			  content: "";
+			  clear: both;
+			  display: table;
+			}
+
+		</style>
+
+
+	</head>
+
+    <body>
+		<a href = "#top">
+			<div id = "logo">
+				<p> Group 3 </p>
+			</div>
+		</a>
+
+		<span id = "menu" style="cursor:pointer" onclick="openNav()">
+			<div class="menu_icon">
+			  <div class="bar1"></div>
+			  <div class="bar3"></div>
+			</div>
+		</span>
+
+        <div id="myNav" class="overlay">
+            <!-- Button to close the overlay navigation -->
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+            <!-- Overlay content -->
+            <div class="overlay-content borderXwidth">
+              <a href="#sec2">Basics</a>
+              <a href="#sec3">Basics Tests</a>
+              <a href="#sec4">Unsigned Binary Multiplication</a>
+              <a href="#sec5">Unsigned Binary Division</a>
+            </div>
+        </div>
+
+		<div class = "parallax1" id = "top">
+			<div class="heading">
+				Binary Arithmetics
+			</div>
+				<a href= "#sec2"><div class = "opt_butt1 anim1_butt"> <span class ="butt_col1">Lets</span> <span class ="butt_col2">Get</span> <span class ="butt_col1">Started</span></div></a>
+		</div>
+
+      	<section class = "sec" id = "sec2">
+			<div class = "container-fluid">
+				<!-- row 1 -->
+				<div class = "row">
+					<div class = "col-md-2">
+					</div>
+					<div class = "col-md-8">
+						<h1 id = "basics">Do you need to learn the basics?</h1>
+					</div>
+					<div class = "col-md-2">
+					</div>
+				</div>
+
+				<!-- row 2 -->
+				<div class = "row">
+					<div class = "col-md-5">
+					</div>
+					<div class = "col-md-2">
+						<a href = "#sec4">
+							<div class = "butt butt1">Not Really</div>
+						</a>
+					</div>
+					<div class = "col-md-5">
+					</div>
+				</div>
+
+				<!-- row 3  of buttons-->
+				<div class = "row">
+					<div class = "col-md-2">
+						<div class = "butt butt2">Binary Addition</div>
+					</div>
+					<div class = "col-md-2">
+						<div class = "butt butt3">Binary Subtraction</div>
+					</div>
+					<div class = "col-md-2">
+						<div class = "butt butt4">Binary Multiplication</div>
+					</div>
+	        		<div class = "col-md-2">
+						<div class = "butt butt5">Binary Division</div>
+					</div>
+	        		<div class = "col-md-2">
+						<div class = "butt butt6">Binary Complement</div>
+					</div>
+	        		<div class = "col-md-2">
+						<div class = "butt butt7">Bit Shifting</div>
+					</div>
+				</div>
+			</div>
+
+        </section>
+
+		<section class = "vid_container Addition">
+			<div class = "container">
+				<div class = "row">
+					<div class = "col-md-4">
+					</div>
+					<div class = "col-md-4">
+						<h2 class = "vid_title"> Binary Addition</h2>
+					</div>
+					<div class = "col-md-4">
+					</div>
+				</div>
+				<div class = "row">
+					<div class = "col-md-12">
+						<p class = "vid_brief">
+							To add these two numbers, we first consider the "ones" column and calculate 6 plus 6, which results in 12. Since 12 is greater than 9 (remembering that base 10 operates with digits 0-9), we "carry" the 1 from the "ones" column to the "tens column" and leave the 2 in the "ones" column.
+						</p>
+					</div>
+				</div>
+				<div class = "row">
+					<div class = "col-sm-3 col-md-3 col-lg-3"></div>
+					<div class = "col-sm-6 col-md-6 col-lg-6">
+						<div class = "vid_box embed-responsive embed-responsive-16by9" id = "add1">
+							<div class = "vid_label"> <h3>Binary Addition </h3> </div>
+							<div class = "vid_overlay overlay_Left">
+							  <div class="vid_text">watch tutorial</div>
+							   <i class="fa fa-play-circle-o"></i>
+							</div>
+						</div>
+						<script>
+							document.getElementById('add1').addEventListener('click', function() {
+								this.innerHTML = '<iframe width="100%" height="300" src="https://www.youtube.com/embed/5F6orbqZigI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+							}); 
+						</script>
+					</div>
+					<div class = "col-sm-3 col-md-3 col-lg-3"></div>
+				</div>
+			</div>
+			<hr>
+			<div class = "binary_desc">
+				<p><strong>Binary addition</strong> calculations work in the same way, except that only 0's and 1's can be used, instead of the whole spectrum of 0-9. This actually makes binary addition much simpler than decimal addition, as we only need to remember the following:</p>
+				<p> 0 + 0 = 0<br />
+					0 + 1 = 1<br />
+					1 + 0 = 1<br />
+					1 + 1 = 10
+				</p>
+				<p> As an example of binary addition we have, </p>
+				<p> &nbsp; 101<br />
+					<u>+101</u>
+				</p>
+				<p> a) To add these two numbers, we first consider the "ones" column and calculate 1 + 1, which (in binary) results in <span style="color:red">1</span>0. We "carry" the <span style="color:red">1</span> to the "tens" column, and the leave the 0 in the "ones" column. </p>
+				<p> b) Moving on to the "tens" column, we calculate <span style="color:red">1</span> + (0 + 0), which gives 1. Nothing "carries" to the "hundreds" column, and we leave the 1 in the "tens" column. </p>
+				<p> c) Moving on to the "hundreds" column, we calculate 1 + 1, which gives <span style="color:red">1</span>0. We "carry" the <span style="color:red">1</span> to the "thousands" column, leaving the 0 in the "hundreds" column. </p>
+				<p> &nbsp; 101<br />
+					<u>+101</u><br />
+					1010
+				</p>
+				<p>Another example of binary addition:</p>
+				<p> &nbsp; 1011<br />
+					<u>+1011</u><br />
+					10110
+				</p>
+				<p> Note that in the "tens" column, we have <span style="color:red">1</span> + (1 + 1), where the first <span style="color:red">1</span> is "carried" from the "ones" column. Recall that in binary, </p>
+				<p> 1 + 1 + 1 = 10 + 1<br />
+					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; = 11
+				</p>
+				<br/>
+			</div>
+		</section>
+
+		<section class = "vid_container Subtraction">
+			<div class = "container">
+				<div class = "row">
+					<div class = "col-md-4">
+					</div>
+					<div class = "col-md-4">
+						<h2 class = "vid_title"> Binary Subtraction</h2>
+					</div>
+					<div class = "col-md-4">
+					</div>
+				</div>
+				<div class = "row">
+				<div class = "col-md-12">
+					<p class = "vid_brief">To divide two numbers, which result is an exact division, we basically need to follow four steps: division, multiplication, subtraction, and next digit.</p>
+				</div>
+				</div>
+				<div class = "row">
+					<div class = "col-sm-3 col-md-3 col-lg-3"></div>
+					<div class = "col-sm-6 col-md-6 col-lg-6">
+			  			<div class = "vid_box embed-responsive embed-responsive-16by9" id = "sub1">
+							<div class = "vid_label"> <h3>Binary Subtraction </h3> </div>
+							<div class = "vid_overlay overlay_Left">
+							  <div class="vid_text">watch tutorial</div>
+							  <i class="fa fa-play-circle-o"></i>
+							</div>
+						</div>
+						<script>
+							document.getElementById('sub1').addEventListener('click', function() {
+								this.innerHTML = '<iframe width="100%" height="300" src="https://www.youtube.com/embed/OHf0Eg9ZhGQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+							}); 
+						</script>
+					</div>
+					<div class = "col-sm-3 col-md-3 col-lg-3"></div>
+				</div>
+			</div>
+			<hr>
+			<div class = "binary_desc">
+			  	<p>Similar to binary addition, <strong>binary subtraction</strong> calculations are simple as well, as long as we remember how subtraction and the base 2 number system. Let's first look at an easy example.</p>
+				<p> &nbsp; 111<br />
+					&nbsp;<u>- 10</u><br />
+					&nbsp; 101
+				</p>
+				<p> Note that the difference is the same if this was decimal subtraction. Also similar to decimal subtraction is the concept of "borrowing.&quot; Watch as &quot;borrowing" occurs when a larger digit, say 8, is subtracted from a smaller digit, say 5, as shown below in decimal subtraction. </p>
+				<p> &nbsp; &nbsp; 35<br />
+					&nbsp; <u>-&nbsp;&nbsp; 8</u><br />
+					&nbsp; &nbsp; 27
+				</p>
+				<p> For 10 minus 1, 1 is borrowed from the "tens" column for use in the "ones" column, leaving the "tens" column with only 2. The following examples show "borrowing" in binary subtraction. </p>
+				<p> &nbsp; &nbsp; 10 &nbsp; &nbsp; &nbsp; 100 &nbsp; &nbsp; &nbsp; &nbsp;1010<br />
+					&nbsp;&nbsp; <u>-&nbsp; 1</u> &nbsp; &nbsp; &nbsp; <u>- 10</u> &nbsp; &nbsp; &nbsp; <u>- 110</u><br />
+					&nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp; 10 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 100
+				</p>
+				<br />
+			</div>
+		</section>
+
+		<section class = "vid_container multiplication">
+			<div class = "container">
+				<div class = "row">
+					<div class = "col-md-3">
+					</div>
+					<div class = "col-md-6">
+						<h2 class = "vid_title"> Binary Multiplication</h2>
+					</div>
+					<div class = "col-md-3">
+					</div>
+				</div>
+				<div class = "row">
+					<div class = "col-md-12">
+							 <p class = "vid_brief">To perform a binary multiplication problem, we need to understand how addition works with binary numbers and follow the same process of multiplication and addition we would use with decimal numbers.</p>
+					</div>
+				</div>
+				<div class = "row">
+					<div class = "col-sm-3 col-md-3 col-lg-3"></div>
+					<div class = "col-sm-6 col-md-6 col-lg-6">
+						<div class = "vid_box embed-responsive embed-responsive-16by9" id = "mul1">
+							<div class = "vid_label"> <h3> Binary Multiplication</h3> </div>
+							<div class = "vid_overlay overlay_Left">
+							  <div class="vid_text">watch tutorial</div>
+							  <i class="fa fa-play-circle-o"></i>
+							</div>
+						</div>
+						<script>
+							document.getElementById('mul1').addEventListener('click', function() {
+								this.innerHTML = '<iframe width="100%" height="300" src="https://www.youtube.com/embed/Va_UvwJULcI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+							}); 
+						</script>
+					</div>
+					<div class = "col-sm-3 col-md-3 col-lg-3"></div>
+				</div>
+			</div>
+			<hr>
+			<div class = "binary_desc">
+				<p><strong>Binary multiplication</strong> is actually much simpler to calculate than decimal multiplication. In the case of decimal multiplication, we need to remember 3 x 9 = 27, 7 x 8 = 56, and so on. In binary multiplication, we only need to remember the following,
+				<p> 0 x 0 = 0<br />
+					0 x 1 = 0<br />
+					1 x 0 = 0<br />
+					1 x 1 = 1
+				</p>
+				<p> Note that since binary operates in base 2, the multiplication rules we need to remember are those that involve 0 and 1 only. As an example of binary multiplication we have 101 times 11, </p>
+				<p>&nbsp; 101<br />
+					&nbsp; <u>x<span style="color:red">1</span><span style="color:blue">1</span></u>
+				</p>
+				<p> First we multiply 101 by <span style="color:blue">1</span>, which produces 101. Then we put a <span style="color:green">0</span> as a placeholder as we would in decimal multiplication, and multiply 101 by <span style="color:red">1</span>, which produces 101. </p>
+				<p> &nbsp; 101<br />
+					&nbsp; <u>x<span style="color:red">1</span><span style="color:blue">1</span></u><br />
+					&nbsp; 101 <br />
+					101<span style="color:green">0</span> &nbsp;&lt;-- the <span style="color:green">0</span> here is the placeholder
+				</p>
+				<p> The next step, as with decimal multiplication, is to add. The results from our previous step indicates that we must add <span style="color:green">101</span> and <span style="color:green">1010</span>, the sum of which is 1111. </p>
+				<p> &nbsp; 101<br />
+					&nbsp;<u> x11</u><br />
+					&nbsp; <span style="color:green">101</span> <br />
+					<span style="color:green"><u>1010</u></span><br />
+					1111
+				</p>
+				<br />
+			</div>
+		</section>
+
+		<section class = "vid_container division">
+			<div class = "container">
+				<div class = "row">
+					<div class = "col-md-4">
+					</div>
+					<div class = "col-md-4">
+						<h2 class = "vid_title"> Binary Division</h2>
+					</div>
+					<div class = "col-md-4">
+					</div>
+				</div>
+				<div class = "row">
+					<div class = "col-md-12">
+							<p class = "vid_brief">To divide two numbers, which result is an exact division, we basically need to follow four steps: division, multiplication, subtraction, and next digit.</p>
+					</div>
+				</div>
+				<div class = "row">
+					<div class = "col-sm-3 col-md-3 col-lg-3"></div>
+					<div class = "col-sm-6 col-md-6 col-lg-6"><div class = "col-sm-3 col-md-3 col-lg-3"></div>
+			  			<div class = "vid_box embed-responsive embed-responsive-16by9" id = "div1">
+							<div class = "vid_label"> <h3>Binary Division</h3> </div>
+							<div class = "vid_overlay overlay_Left">
+							  <div class="vid_text">watch tutorial</div>
+							  <i class="fa fa-play-circle-o"></i>
+							</div>
+						</div>
+						<script>
+							document.getElementById('div1').addEventListener('click', function() {
+								this.innerHTML = '<iframe width="100%" height="300" src="https://www.youtube.com/embed/ubCCemtuZH8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+							}); 
+						</script>
+					</div>
+					<div class = "col-sm-3 col-md-3 col-lg-3"></div>
+				</div>
+			</div>
+			<hr>
+			<div class = "binary_desc">
+				<p><strong>Binary division</strong> is almost as easy to calculate as multiplying binary numbers, and involves our knowledge of binary multiplication. Be sure to review binary multiplication first.</p>
+				<p>Let's take for example the division of 1011 into 11.</p>
+				<p> &nbsp; &nbsp; &nbsp; &nbsp;<u> &nbsp; &nbsp; <span style="color:red">11</span></u> &nbsp; R=<span style="color:green">10</span><br />
+					&nbsp;<span style="color:blue">11</span> )1011<br />
+					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <u>-11</u><br />
+					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;101<br />
+					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <u>-11</u><br />
+					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color:green">10</span> &lt;-- remainder, R
+				</p>
+				<p> To check our answer, we first multiply our divisor <span style="color:blue">11</span> by our quotient <span style="color:red">11</span>. Then we add its' product to the remainder <span style="color:green">10</span>, and compare it to our dividend of 1011. </p>
+				<p> &nbsp; &nbsp; &nbsp;<span style="color:blue">11</span><br />
+					&nbsp; <u>x <span style="color:red">11</span></u><br />
+					&nbsp; &nbsp; &nbsp;11<br />
+					<u>+ 11 &nbsp;</u><br />
+					&nbsp;1001 &nbsp;&lt;-- product of 11 and 11
+				</p>
+				<p> &nbsp;1001<br />
+					&nbsp;<u>+ &nbsp;<span style="color:green">10</span></u><br />
+					&nbsp;1011 &nbsp;&lt;-- sum of product and remainder
+				</p>
+				<p> The sum is equal to our initial dividend, therefore our solution is correct. </p>
+				<br />
+			</div>
+		</section>
+
+		<section class = "vid_container complement">
+			<div class = "container">
+				<div class = "row">
+					<div class = "col-md-3">
+					</div>
+					<div class = "col-md-6">
+						<h2 class = "vid_title"> Binary Complement</h2>
+					</div>
+					<div class = "col-md-3">
+					</div>
+				</div>
+				<div class = "row">
+				<div class = "col-md-12">
+					 <p class = "vid_brief">To get the two's complement negative notation of an integer, you write out the number in binary. You then invert the digits, and add one to the result.</p>
+				</div>	
+				</div>
+				<div class = "row">
+					<div class = "col-sm-6 col-md-6 col-lg-6">
+			    		<div class = "vid_box embed-responsive embed-responsive-16by9" id = "com1">
+							<div class = "vid_label"> <h3> 1's and 2's Complement</h3> </div>
+							<div class = "vid_overlay overlay_Left">
+							  <div class="vid_text">watch tutorial</div>
+							  <i class="fa fa-play-circle-o"></i>
+							</div>
+						</div>
+						<script>
+							document.getElementById('com1').addEventListener('click', function() {
+								this.innerHTML = '<iframe width="100%" height="300" src="https://www.youtube.com/embed/ubCCemtuZH8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+							}); 
+						</script>
+					</div>
+					<div class = "col-sm-6 col-md-6 col-lg-6">
+			    		<div class = "vid_box embed-responsive embed-responsive-16by9" id = "com1">
+							<div class = "vid_label"> <h3> Negative Numbers</h3> </div>
+							<div class = "vid_overlay overlay_Left">
+							  <div class="vid_text">watch tutorial</div>
+							  <i class="fa fa-play-circle-o"></i>
+							</div>
+						</div>
+						<script>
+							document.getElementById('com1').addEventListener('click', function() {
+								this.innerHTML = '<iframe width="100%" height="300" src="https://www.youtube.com/embed/4qH4unVtJkE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+							}); 
+						</script>
+					</div>
+				</div>
+			</div>
+			<hr>
+			<div class = "binary_desc">
+				<h1 style = "text-align: center;"> 1’s and 2’s complement of a Binary Number</h1>
+				<br>
+				<br>
+				<p>1’s complement of a binary number is another binary number obtained by toggling all bits in it, i.e., transforming the 0 bit to 1 and the 1 bit to 0.</p>
+				<p >Example.:</p>
+				<br>
+				<div class = "comp_desc">
+					<i>1's complement of "0111" is "1000"</i>
+					<br>
+					<i>1's complement of "1100" is  "0011"</i> 
+				</div>
+
+				<br/>
+				<br>
+				<br>
+				<p>2’s complement of a binary number is 1 added to the 1’s complement of the binary number.</p>
+				<p>Examples:</p>
+				<br/>
+				<div class = "comp_desc">
+					<i>2's complement of "0111" is  "1001"</i>
+					<br>
+					<i>2's complement of "1100" is  "0100" </i>
+				</div>
+				<br/>
+
+				<p>For one’s complement, we simply need to flip all bits.</p>
+				<br/>
+
+				<p>For 2’s complement, we first find one’s complement. We traverse the one’s complement starting from LSB (least significant bit), and look for 0. We flip all 1’s (change to 0) until we find a 0. Finally, we flip the found 0. For example, 2’s complement of “01000” is “11000” (Note that we first find one’s complement of 01000 as 10111).   If there are all 1’s (in one’s complement), we add an extra 1 in the string. For example, 2’s complement of “000” is “1000” (1’s complement of “000” is “111”).</p>
+				
+				<br/>
+			</div>
+		</section>
+
+		<section class = "vid_container Shifts">
+			<div class = "container">
+				<div class = "row">
+					<div class = "col-md-3">
+					</div>
+					<div class = "col-md-6">
+						<h2 class = "vid_title"> Bit Shifting</h2>
+					</div>
+					<div class = "col-md-3">
+					</div>
+				</div>
+				<div class = "row">
+					<div class = "col-md-12">
+						<p class = "vid_brief">To get the two's complement negative notation of an integer, you write out the number in binary. You then invert the digits, and add one to the result.</p>
+					</div>
+				</div>
+				<div class = "row">
+					<div class = "col-md-1">
+					</div>
+					<div class = "col-md-4">
+			  			<div class = "vid_box embed-responsive embed-responsive-16by9" id = "shift1">
+							<div class = "vid_label"> <h3> Bit Shifts</h3> </div>
+							<div class = "vid_overlay overlay_Left">
+							  <div class="vid_text">watch tutorial</div>
+							   <i class="fa fa-play-circle-o"></i>
+							</div>
+						</div>
+						<script>
+							document.getElementById('shift1').addEventListener('click', function() {
+								this.innerHTML = '<iframe width="100%" height="300" src="https://www.youtube.com/embed/fDKUq38H2jk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+							}); 
+						</script>
+					</div>
+					<div class = "col-md-2">
+					</div>
+					<div class = "col-md-4">
+			  			<div class = "vid_box embed-responsive embed-responsive-16by9" id = "shift2">
+							<div class = "vid_label"> <h3>Shift Left</h3> </div>
+							<div class = "vid_overlay overlay_Right">
+							  <div class="vid_text">watch tutorial</div>
+							  <i class="fa fa-play-circle-o"></i>
+							</div>
+						</div>
+						<script>
+							document.getElementById('shift2').addEventListener('click', function() {
+								this.innerHTML = '<iframe src="Vids/vid4.mp4" width="100%" height="300" frameborder="0" allowfullscreen="false">';
+							}); 
+						</script>
+					</div>
+					<div class = "col-md-1">
+					</div>
+				</div>
+			</div>
+			<hr>
+			<div class = "binary_desc">
+				<h1 style = "text-align: center; font-weight: 900;">   Bit Shifting</h1>
+				<br>
+				<br>
+				<br>
+
+				<p> A <strong>bit shift</strong> moves each digit in a number's binary representation left or right.</p>
+				<br>
+				<br>
+
+				<h3><strong> Left Shifts </strong>	</h3>
+				<br>
+				<p> When shifting left, the most-significant bit is lost, and a <span math="">0</span> bit is inserted on the other end. </p>
+				<br>
+
+				<div class="clearfix"></div>
+				<div class="clearfix"></div>
+				<div class="clearfix"></div>
+				<div class="clearfix"></div>
+				<div class = "comp_desc" code-block="concept__bit-shift__left-shift-zero-on-end" language="none" translation-highlighting="static" actual-language="none">
+					<i>0010 &lt;&lt; 1  &#8594;  0100</i>
+					<br>
+					<i>0010 &lt;&lt; 2  &#8594;  1000</i>
+				</div>
+				<br>
+				<p> A single left shift multiplies a binary number by 2: </p>
+				
+				<div class = "comp_desc" code-block="concept__bit-shift__single-left-shift-multiplies-by-two" language="none" translation-highlighting="static" actual-language="none">
+					<i>0010 &lt;&lt; 1  &#8594;  0100</i>
+					<br>
+					<br>
+					<i>0010 is 2</i>
+					<br>
+					<i>0100 is 4</i>
+				</div>
+
+				<br>
+				<h3> <strong>   Logical Right Shifts </strong>	</h3>
+				<br>
+				<p> When shifting right with a <strong>logical right shift</strong>, the least-significant bit is lost and a <span math="">0</span> is inserted on the other end. </p>
+				
+				<div code-block="concept__bit-shift__logical-right-shift-zero-on-end" language="none" translation-highlighting="static" actual-language="none">
+					<i>1011 &gt;&gt;&gt; 1  &#8594;  0101</i>
+					<br>
+					<i>1011 &gt;&gt;&gt; 3  &#8594;  0001</i>
+				</div>
+				<p> For positive numbers, a single logical right shift divides a number by 2, throwing out any remainders. </p>
+				<br>
+				
+				<div class = "comp_desc" code-block="concept__bit-shift__single-right-shift-divides-by-two" language="none" translation-highlighting="static" actual-language="none">
+					<i>0101 &gt;&gt;&gt; 1  &#8594;  0010 </i>
+					<br>
+					<br>
+
+					<i>0101 is 5</i>
+						<br>
+					<i>0010 is 2</i>
+				</div>
+				<br>
+				<br>
+
+
+				<h3> <strong>  Arithmetic Right Shifts </strong></h3>
+				<br>
+				<p>
+				    When shifting right with an <strong>arithmetic right
+				    shift</strong>, the least-significant bit is lost and the
+				    most-significant bit is <em>copied</em>.
+				</p>
+				<br>
+				<div class="clearfix"></div>
+				<div class="clearfix"></div>
+				<div class="clearfix"></div>
+				<div class="clearfix"></div>
+				<div class = "comp_desc" code-block="concept__bit-shift__arithmetic-right-shift" language="none" translation-highlighting="static" actual-language="none">
+					<i>1011 &gt;&gt; 1  &#8594;  1101</i>
+					<br>
+					<i>1011 &gt;&gt; 3  &#8594;  1111</i>
+					<br>
+					<i>0011 &gt;&gt; 1  &#8594;  0001</i>
+					<br>
+					<i>0011 &gt;&gt; 2  &#8594;  0000</i>
+				</div>
+				<p>
+				    The first two numbers had a <span math="">1</span> as the most
+				    significant bit, so more <span math="">1</span>'s were inserted
+				    during the shift. The last two numbers had a <span math="">0</span>
+				    as the most significant bit, so the shift inserted
+				    more <span math="">0</span>'s.
+				</p>
+				<p>
+				    If a number is encoded using
+				    <a href="/concept/binary-numbers#twos-complement">
+				        two's complement,
+				    </a> then an arithmetic right shift preserves the number's sign,
+				    while a logical right shift makes the number positive.
+				</p>
+				<div class="clearfix"></div>
+				<div class="clearfix"></div>
+				<div class="clearfix"></div>
+				<div class="clearfix"></div>
+				<div class = "comp_desc" code-block="concept__bit-shift__arithmetic-right-shift-sign-preserve" language="none" translation-highlighting="static" actual-language="none">
+					<i>1011 &gt;&gt; 1  &#8594;  1101</i>
+					<br>
+					<br>
+				    <i>1011 is -5</i>
+				    <br>
+				    <i>1101 is -3</i>
+					<br>
+					<br>
+
+					<i>1111 &gt;&gt;&gt; 1  &#8594;  0111</i>
+					<br><br>
+				    <i>1111 is -1</i>
+				    <br>
+				    <i>0111 is  7</i>
+				</div>
+				<p>
+				    Languages handle arithmetic and logical right shifting in
+				    different ways. <span words="concept__bit-shift__language-right-shifts">Java provides two right shift operators: &gt;&gt; does
+				                an <em>arithmetic</em> right shift and &gt;&gt;&gt;
+				                does a <em>logical</em> right shift.</span>
+				</p>
+			</div>
+		</section>
+
+		<div class="parallax2">
+			
+		</div>
+
+		<section class = "sec" id = "sec3">
+			<div class = "container-fluid">
+				<!-- row 1 -->
+				<div class = "row">
+					<div class = "col-md-2">
+					</div>
+					<div class = "col-md-8">
+						<h1 id = "basics">Test Your Binary Arithmetic Skills!</h1>
+					</div>
+					<div class = "col-md-2">
+					</div>
+				</div>
+
+				<!-- row 2 -->
+				<div class = "row">
+					<div class = "col-md-5">
+					</div>
+					<div class = "col-md-2">
+						<a href = "#sec4">
+							<div class = "butt butt8">No! I think I got it!</div>
+						</a>
+					</div>
+					<div class = "col-md-5">
+					</div>
+				</div>
+
+				<!-- row 3  of buttons-->
+				<div class = "row">
+					<div class = "col-md-2">
+						<div class = "butt butt9">Binary Addition Test</div>
+					</div>
+					<div class = "col-md-2">
+						<div class = "butt butt10">Binary Subtraction Test</div>
+					</div>
+					<div class = "col-md-2">
+						<div class = "butt butt11">Binary Multiplication Test</div>
+					</div>
+	        		<div class = "col-md-2">
+						<div class = "butt butt12">Binary Division Test</div>
+					</div>
+	        		<div class = "col-md-2">
+						<div class = "butt butt13">Binary Complement Test</div>
+					</div>
+	        		<div class = "col-md-2">
+						<div class = "butt butt14">Bit Shifting Test</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class = "vid_container add_test">
+			<div class = "container">
+				<div class = "row">
+					<div class = "col-md-3">
+					</div>
+					<div class = "col-md-6">
+						<h2 class = "vid_title";"> Binary Addition Test</h2>
+					</div>
+					<div class = "col-md-3">
+					</div>
+				</div>
+				<div class = "row">
+					<div class = "col-md-12">
+						<p class = "vid_brief">Complete the exercises.</p>
+					</div>
+				</div>
+			</div>
+			<hr>
+			<form id = "add" class="form-horizontal">
+				<div class="form-group">
+					<label class="control-label col-sm-4"> 101 + 11:</label>
+					<div class="col-sm-3">
+						<input type="text" class="form-control" id ="numa" name = "num" placeholder="Enter Answer"> 
+						<div id="messages"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="control-label col-sm-4"> 111 + 111:</label>
+					<div class="col-sm-3">
+						<input type="text" class="form-control"  id ="numa" name = "num"  placeholder="Enter Answer">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="control-label col-sm-4"> 1011 + 0101:</label>
+					<div class="col-sm-3">
+						<input type="text" class="form-control" id ="numa" name = "num" id="Exer" placeholder="Enter Answer">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="control-label col-sm-4"> 11011 + 11010:</label>
+					<div class="col-sm-3">
+						<input type="text" class="form-control"  id ="numa" name = "num" placeholder="Enter Answer">
+					</div>
+				</div>
+			</form>
+		</section>
+
+		<section class = "vid_container sub_test">
+			<div class = "container">
+				<div class = "row">
+					<div class = "col-md-3">
+					</div>
+					<div class = "col-md-6">
+						<h2 class = "vid_title"> Binary Subtraction Test</h2>
+					</div>
+					<div class = "col-md-3">
+					</div>
+				</div>
+				<div class = "row">
+					<div class = "col-md-12">
+						<p class = "vid_brief">what to do.</p>
+					</div>
+				</div>
+			</div>
+			<hr>
+			<form id = "add" class="form-horizontal">
+				<div class="form-group">
+					<label class="control-label col-sm-4"> 101 - 11:</label>
+					<div class="col-sm-3">
+						<input type="text" class="form-control" id ="numa" name = "num" placeholder="Enter Answer"> 
+						<div id="messages"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="control-label col-sm-4"> 111  111:</label>
+					<div class="col-sm-3">
+						<input type="text" class="form-control"  id ="numa" name = "num"  placeholder="Enter Answer">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="control-label col-sm-4"> 1011 - 0101:</label>
+					<div class="col-sm-3">
+						<input type="text" class="form-control" id ="numa" name = "num" id="Exer" placeholder="Enter Answer">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="control-label col-sm-4"> 11011 - 11010:</label>
+					<div class="col-sm-3">
+						<input type="text" class="form-control"  id ="numa" name = "num" placeholder="Enter Answer">
+					</div>
+				</div>
+				<hr>
+			</form>
+		</section>
+
+		<section class = "vid_container mul_test">
+			<div class = "container">
+				<div class = "row">
+					<div class = "col-md-3">
+					</div>
+					<div class = "col-md-6">
+						<h2 class = "vid_title"> Binary Multiplication Test</h2>
+					</div>
+					<div class = "col-md-3">
+					</div>
+				</div>
+				<div class = "row">
+					<div class = "col-md-12">
+						<p class = "vid_brief">what to do.</p>
+					</div>
+				</div>
+			</div>
+			<hr>
+			<form id = "add" class="form-horizontal">
+				<div class="form-group">
+					<label class="control-label col-sm-4"> 110 * 11:</label>
+					<div class="col-sm-3">
+						<input type="text" class="form-control" id ="numa" name = "num" placeholder="Enter Answer"> 
+						<div id="messages"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="control-label col-sm-4"> 100010 * 1100:</label>
+					<div class="col-sm-3">
+						<input type="text" class="form-control"  id ="numa" name = "num"  placeholder="Enter Answer">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="control-label col-sm-4"> 1010 * 0101:</label>
+					<div class="col-sm-3">
+						<input type="text" class="form-control" id ="numa" name = "num" id="Exer" placeholder="Enter Answer">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="control-label col-sm-4"> 1110 * 111:</label>
+					<div class="col-sm-3">
+						<input type="text" class="form-control"  id ="numa" name = "num" placeholder="Enter Answer">
+					</div>
+				</div>
+			</form>
+		</section>
+
+		<section class = "vid_container div_test">
+			<div class = "container">
+				<div class = "row">
+					<div class = "col-md-3">
+					</div>
+					<div class = "col-md-6">
+						<h2 class = "vid_title"> Binary Division Test</h2>
+					</div>
+					<div class = "col-md-3">
+					</div>
+				</div>
+				<div class = "row">
+					<div class = "col-md-12">
+						<p class = "vid_brief">what to do.</p>
+					</div>
+				</div>
+			</div>
+			<hr>
+			<form id = "add" class="form-horizontal">
+				<div class="form-group">
+					<label class="control-label col-sm-4"> 110 / 11:</label>
+					<div class="col-sm-3">
+						<input type="text" class="form-control" id ="numa" name = "num" placeholder="Enter Answer"> 
+						<div id="messages"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="control-label col-sm-4"> 100010 / 1100:</label>
+					<div class="col-sm-3">
+						<input type="text" class="form-control"  id ="numa" name = "num"  placeholder="Enter Answer">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="control-label col-sm-4"> 1010 / 0101:</label>
+					<div class="col-sm-3">
+						<input type="text" class="form-control" id ="numa" name = "num" id="Exer" placeholder="Enter Answer">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="control-label col-sm-4"> 1110 / 111:</label>
+					<div class="col-sm-3">
+						<input type="text" class="form-control"  id ="numa" name = "num" placeholder="Enter Answer">
+					</div>
+				</div>
+			</form>
+		</section>
+
+		<section class = "vid_container com_test">
+			<div class = "container">
+				<div class = "row">
+					<div class = "col-md-3">
+					</div>
+					<div class = "col-md-6">
+						<h2 class = "vid_title"> Binary Complement Test</h2>
+					</div>
+					<div class = "col-md-3">
+					</div>
+				</div>
+				<div class = "row">
+					<div class = "col-md-12">
+						<p class = "vid_brief">what to do.</p>
+					</div>
+				</div>
+			</div>
+			<hr>
+			<form id = "add" class="form-horizontal">
+				<div class="form-group">
+					<label class="control-label col-sm-4"> 10111:</label>
+					<div class="col-sm-3">
+						<input type="text" class="form-control"  id ="numa" name = "num" placeholder="Enter 1's Complement">
+					</div>
+					<div class="col-sm-3">
+						<input type="text" class="form-control"  id ="numa" name = "num" placeholder="Enter 2's Complement">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="control-label col-sm-4"> 111111:</label>
+					<div class="col-sm-3">
+						<input type="text" class="form-control"  id ="numa" name = "num" placeholder="Enter 1's Complement">
+					</div>
+					<div class="col-sm-3">
+						<input type="text" class="form-control"  id ="numa" name = "num" placeholder="Enter 2's Complement">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="control-label col-sm-4"> 10110101:</label>
+					<div class="col-sm-3">
+						<input type="text" class="form-control"  id ="numa" name = "num" placeholder="Enter 1's Complement">
+					</div>
+					<div class="col-sm-3">
+						<input type="text" class="form-control"  id ="numa" name = "num" placeholder="Enter 2's Complement">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="control-label col-sm-4"> 1101111010:</label>
+					<div class="col-sm-3">
+						<input type="text" class="form-control"  id ="numa" name = "num" placeholder="Enter 1's Complement">
+					</div>
+					<div class="col-sm-3">
+						<input type="text" class="form-control"  id ="numa" name = "num" placeholder="Enter 2's Complement">
+					</div>
+				</div>
+			</form>
+		</section>
+
+		<section class = "vid_container shift_test">
+			<div class = "container">
+				<div class = "row">
+					<div class = "col-md-3">
+					</div>
+					<div class = "col-md-6">
+						<h2 class = "vid_title"> Binary Shifting Test</h2>
+					</div>
+					<div class = "col-md-3">
+					</div>
+				</div>
+				<div class = "row">
+					<div class = "col-md-12">
+						<p class = "vid_brief">what to do.</p>
+					</div>
+				</div>
+			</div>
+			<hr>
+			<form id = "add" class="form-horizontal">
+				<div class="form-group">
+					<label class="control-label col-sm-4"> <i>00010 &lt;&lt; &#8594;  1</i> :</label>
+					<div class="col-sm-3">
+						<input type="text" class="form-control" id ="numa" name = "num" placeholder="Enter Answer"> 
+						<div id="messages"></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="control-label col-sm-4"> <i>0010010 &lt;&lt;  &#8594;  2</i>:</label>
+					<div class="col-sm-3">
+						<input type="text" class="form-control"  id ="numa" name = "num"  placeholder="Enter Answer">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="control-label col-sm-4"> 0101011 &gt;&gt;  &#8594; 2:</label>
+					<div class="col-sm-3">
+						<input type="text" class="form-control" id ="numa" name = "num" id="Exer" placeholder="Enter Answer">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="control-label col-sm-4"> 10100111 &gt;&gt;  &#8594; 3:</label>
+					<div class="col-sm-3">
+						<input type="text" class="form-control"  id ="numa" name = "num" placeholder="Enter Answer">
+					</div>
+				</div>
+			</form>
+		</section>
+
+		<div class="parallax3">
+
+		</div>
+
+		<section class = "sec"  id = "sec4">
+			<div class = "container-fluid">
+				<!-- row 1 -->
+				<div class = "row">
+					<div class = "col-md-2">
+					</div>
+					<div class = "col-md-8">
+						<h1 id = "basics">Usigned Binary Multiplication</h1>
+					</div>
+					<div class = "col-md-2">
+					</div>
+				</div>
+
+				<!-- row 2 -->
+				<div class = "row">
+					<div class = "col-md-2">
+					</div>
+					<div class = "col-md-8">
+						<h1 id = "basics">How does Booth's Algorithm work for Unsigned Binary Multiplication?</h1>
+					</div>
+					<div class = "col-md-2">
+					</div>
+				</div>
+
+				<!-- row 3 of buttons-->
+				<div class = "row">
+					<div class = "col-md-2">
+					</div>
+					<div class = "col-md-2">
+						<div class = "butt butt15">Booth's Algorithm</div>
+					</div>
+					<div class = "col-md-2">
+						<div class = "butt butt16">Example 1</div>
+					</div>
+	        		<div class = "col-md-2">
+						<div class = "butt butt17">Example 2</div>
+					</div>
+					<div class = "col-md-2">
+						<div class = "butt butt18">Example 3</div>
+					</div>
+					<div class = "col-md-2">
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class = "vid_container Unsigned_mul">
+			<div class = "container">
+				<div class = "row">
+					<div class = "col-md-1">
+					</div>
+					<div class = "col-md-10">
+						<h2 class = "vid_title"> Unsigned Binary Multiplication</h2>
+					</div>
+					<div class = "col-md-1">
+					</div>
+				</div>
+				<div class = "row">
+					<div class = "col-md-12">
+						<p class = "vid_brief">Booth algorithm gives a procedure for multiplying binary integers in signed 2’s complement representation in efficient way, i.e., less number of additions/subtractions required. It operates on the fact that strings of 0’s in the multiplier require no addition but just shifting and a string of 1’s in the multiplier from bit weight 2^k to weight 2^m can be treated as 2^(k+1 ) to 2^m.</p>
+					</div>
+				</div>
+				<div class = "row">
+					<div class = "col-sm-4 col-md-4 col-lg-4">
+						<div class = "vid_box embed-responsive embed-responsive-16by9" id = "umul1">
+							<div class = "vid_label"> <h3>5 * -3 </h3> </div>
+							<div class = "vid_overlay overlay_Left">
+							  <div class="vid_text">watch tutorial</div>
+							   <i class="fa fa-play-circle-o"></i>
+							</div>
+						</div>
+						<script>
+							document.getElementById('umul1').addEventListener('click', function() {
+								this.innerHTML = '<iframe width="100%" height="300" src="https://www.youtube.com/embed/NSzKlY-6tcQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+							}); 
+						</script>
+					</div>
+				</div>
+			</div>
+			<hr>
+			<div class = "binary_desc">
+				<h1>Booth's Algrithm</h1>
+				<br/>
+				<br/>
+				<p>
+					We name the register as A, B and Q, AC, BR and QR respectively. Qn designates the least significant bit of multiplier in the register QR. An extra flip-flop Qn+1is appended to QR to facilitate a double inspection of the multiplier. Qn+1 is appended to QR to facilitate a double inspection of the multiplier. The flowchart for the booth algorithm is shown below.
+				</p>
+				<br/>
+				<br/>
+				<h2>Booth's Algorithm Flowchart</h2>
+				<br/>
+				<br/>
+				<img src="img/Boot1.png" style = "height: 40%; width: 40%;">
+
+				<br/>
+				<br/>
+				<p> 
+					AC and the appended bit Qn+1 are initially cleared to 0 and the sequence SC is set to a number n equal to the number of bits in the multiplier. The two bits of the multiplier in Qn and Qn+1are inspected. If the two bits are equal to 10, it means that the first 1 in a string has been encountered. This requires subtraction of the multiplicand from the partial product in AC. If the 2 bits are equal to 01, it means that the first 0 in a string of 0’s has n = been encountered. This requires the addition of the multiplicand to the partial product in AC.
+				</p>	
+				<p>
+					When the two bits are equal, the partial product does not change. An overflow cannot occur because the addition and subtraction of the multiplicand follow each other. As a consequence, the 2 numbers that are added always have a opposite signs, a condition that excludes an overflow. The next step is to shift right the partial product and the multiplier (including Qn+1). This is an arithmetic shift right (ashr) operation which AC and QR ti the right and leaves the sign bit in AC unchanged. The sequence counter is decremented and the computational loop is repeated n times.
+				</p>
+				<br/>
+			</div>
+		</section>
+
+		<section class = "vid_container mul_ex1">
+			<div class = "container">
+				<div class = "row">
+					<div class = "col-md-1">
+					</div>
+					<div class = "col-md-10">
+						<h1 class = "vid_title";"> Booth's Algorithm Example 1</h1>
+					</div>
+					<div class = "col-md-1">
+					</div>
+				</div>
+				<div class = "row">
+					<div class = "col-md-12">
+						<h3 class = "vid_brief">Table Showing the Booth's Algorithm Process for -5 * 3</h3>
+					</div>
+				</div>
+			</div>
+			<hr>
+			<div class ="table_cont">
+				<table class = "table-responsive" id="customers">
+				  	<tr>
+					    <th>A</th>
+					    <th>Q</th>
+					    <th>Q-1</th>
+					    <th>M</th>
+					    <th>Operation</th>
+					    <th>Cycle</th>
+					</tr>
+					<tr>
+					    <td>0000</td>
+					    <td>0011</td>
+					    <td>0</td>
+					    <td>1011</td>
+					    <td></td>
+					    <td></td>
+					</tr>
+					<tr>
+					    <td>0101</td>
+					    <td>0011</td>
+					    <td>1</td>
+					    <td>1011</td>
+					    <td>A - M</td>
+					    <td>1st Cycle</td>
+					</tr>
+					<tr>
+					    <td>0010</td>
+					    <td>1001</td>
+					    <td>1</td>
+					    <td>1011</td>
+					    <td></td>
+					    <td>shift</td>
+					</tr>
+					<tr>
+					    <td>0001</td>
+					    <td>0100</td>
+					    <td>1</td>
+					    <td>1011</td>
+					    <td>Shift</td>
+					    <td>2nd Cycle</td>
+					</tr>
+					<tr>
+					    <td>1100</td>
+					    <td>0100</td>
+					    <td>1</td>
+					    <td>1011</td>
+					    <td>A + M</td>
+					    <td>3rd Cycle</td>
+					</tr>
+					<tr>
+					    <td>1110</td>
+					    <td>0100</td>
+					    <td>0</td>
+					    <td>1011</td>
+					    <td></td>
+					    <td>shift</td>
+					</tr>
+					<tr>
+					    <td>1111</td>
+					    <td>0001</td>
+					    <td>0</td>
+					    <td>1011</td>
+					    <td>Shift</td>
+					    <td>4th Cycle</td>
+					</tr>
+					
+				</table>
+			</div>
+		</section>
+
+		<section class = "vid_container mul_ex2">
+			<div class = "container">
+				<div class = "row">
+					<div class = "col-md-1">
+					</div>
+					<div class = "col-md-10">
+						<h1 class = "vid_title";"> Booth's Algorithm Example 2</h1>
+					</div>
+					<div class = "col-md-1">
+					</div>
+				</div>
+				<div class = "row">
+					<div class = "col-md-12">
+						<h3 class = "vid_brief">Table Showing the Booth's Algorithm Process for -5 * -3</h3>
+					</div>
+				</div>
+			</div>
+			<hr>
+			<div class ="table_cont">
+				<table class = "table-responsive" id="customers">
+				  	<tr>
+					    <th>A</th>
+					    <th>Q</th>
+					    <th>Q-1</th>
+					    <th>M</th>
+					    <th>Operation</th>
+					    <th>Cycle</th>
+					</tr>
+					<tr>
+					    <td>0000</td>
+					    <td>1011</td>
+					    <td>0</td>
+					    <td>0011</td>
+					    <td></td>
+					    <td></td>
+					</tr>
+					<tr>
+					    <td>1101</td>
+					    <td>1011</td>
+					    <td>0</td>
+					    <td>0011</td>
+					    <td>A - M</td>
+					    <td>1st Cycle</td>
+					</tr>
+					<tr>
+					    <td>1110</td>
+					    <td>1101</td>
+					    <td>1</td>
+					    <td>0011</td>
+					    <td></td>
+					    <td>shift</td>
+					</tr>
+					<tr>
+					    <td>1111</td>
+					    <td>0110</td>
+					    <td>1</td>
+					    <td>0011</td>
+					    <td>Shift</td>
+					    <td>2nd Cycle</td>
+					</tr>
+					<tr>
+					    <td>0010</td>
+					    <td>0110</td>
+					    <td>1</td>
+					    <td>0011</td>
+					    <td>A + M</td>
+					    <td>3rd Cycle</td>
+					</tr>
+					<tr>
+					    <td>0001</td>
+					    <td>0011</td>
+					    <td>0</td>
+					    <td>0011</td>
+					    <td></td>
+					    <td>shift</td>
+					</tr>
+					<tr>
+					    <td>1110</td>
+					    <td>0011</td>
+					    <td>0</td>
+					    <td>0011</td>
+					    <td>A - M</td>
+					    <td>4th Cycle</td>
+					</tr>
+					<tr>
+					    <td>1111</td>
+					    <td>0001</td>
+					    <td>1</td>
+					    <td>0011</td>
+					    <td></td>
+					    <td>shift</td>
+					</tr>
+				</table>
+			</div>
+		</section>
+
+		<section class = "vid_container mul_ex3">
+			<div class = "container">
+				<div class = "row">
+					<div class = "col-md-1">
+					</div>
+					<div class = "col-md-10">
+						<h1 class = "vid_title";"> Booth's Algorithm Example 3</h1>
+					</div>
+					<div class = "col-md-1">
+					</div>
+				</div>
+				<div class = "row">
+					<div class = "col-md-12">
+						<h3 class = "vid_brief">Table Showing the Booth's Algorithm Process for -3 * -5</h3>
+					</div>
+				</div>
+			</div>
+			<hr>
+			<div class ="table_cont">
+				<table class = "table-responsive" id="customers">
+				  	<tr>
+					    <th>A</th>
+					    <th>Q</th>
+					    <th>Q-1</th>
+					    <th>M</th>
+					    <th>Operation</th>
+					    <th>Cycle</th>
+					</tr>
+					<tr>
+					    <td>0000</td>
+					    <td>1101</td>
+					    <td>0</td>
+					    <td>1011</td>
+					    <td></td>
+					    <td></td>
+					</tr>
+					<tr>
+					    <td>0101</td>
+					    <td>1101</td>
+					    <td>0</td>
+					    <td>1011</td>
+					    <td>A - m</td>
+					    <td>1st Cycle</td>
+					</tr>
+					<tr>
+					    <td>0010</td>
+					    <td>1110</td>
+					    <td>1</td>
+					    <td>1011</td>
+					    <td></td>
+					    <td>shift</td>
+					</tr>
+					<tr>
+					    <td>1101</td>
+					    <td>1110</td>
+					    <td>1</td>
+					    <td>1011</td>
+					    <td>A + M</td>
+					    <td>2nd Cycle</td>
+					</tr>
+					<tr>
+					    <td>0011</td>
+					    <td>1111</td>
+					    <td>0</td>
+					    <td>1011</td>
+					    <td>A - M</td>
+					    <td>3rd Cycle</td>
+					</tr>
+					<tr>
+					    <td>0001</td>
+					    <td>1111</td>
+					    <td>1</td>
+					    <td>1011</td>
+					    <td></td>
+					    <td>shift</td>
+					</tr>
+					<tr>
+					    <td>0000</td>
+					    <td>1111</td>
+					    <td>1</td>
+					    <td>1011</td>
+					    <td>Shift</td>
+					    <td>4th Cycle</td>
+					</tr>
+				</table>
+			</div>
+		</section>
+
+		<div class="parallax4">
+
+		</div>
+
+		<section class = "sec"  id = "sec5">
+			<div class = "container-fluid">
+				<!-- row 1 -->
+				<div class = "row">
+					<div class = "col-md-2">
+					</div>
+					<div class = "col-md-8">
+						<h1 id = "basics">Usigned Binary Division</h1>
+					</div>
+					<div class = "col-md-2">
+					</div>
+				</div>
+
+				<!-- row 2 -->
+				<div class = "row">
+					<div class = "col-md-2">
+					</div>
+					<div class = "col-md-8">
+						<h1 id = "basics">How does Restoring Division Algorithm work for unsigned binary?</h1>
+					</div>
+					<div class = "col-md-2">
+					</div>
+				</div>
+
+				<!-- row 3  of buttons-->
+				<div class = "row">
+					<div class = "col-md-3">
+					</div>
+					<div class = "col-md-2">
+						<div class = "butt butt19">How It Works</div>
+					</div>
+					<div class = "col-md-2">
+						<div class = "butt butt20">Example 1</div>
+					</div>
+	        		<div class = "col-md-2">
+						<div class = "butt butt21">Example 2</div>
+					</div>
+					<div class = "col-md-3">
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class = "vid_container Unsigned_div">
+			<div class = "container">
+				<div class = "row">
+					<div class = "col-md-3">
+					</div>
+					<div class = "col-md-6">
+						<h2 class = "vid_title"> Unsigned Binary Division</h2>
+					</div>
+					<div class = "col-md-3">
+					</div>
+				</div>
+				<div class = "row">
+					<div class = "col-md-12">
+						<p class = "vid_brief"></p>
+					</div>
+				</div>
+				<div class = "row">
+					<div class = "col-sm-4 col-md-4 col-lg-4">
+						<div class = "vid_box embed-responsive embed-responsive-16by9" id = "udiv1">
+							<div class = "vid_label"> <h3>5 * -3 </h3> </div>
+							<div class = "vid_overlay overlay_Left">
+							  <div class="vid_text">watch tutorial</div>
+							   <i class="fa fa-play-circle-o"></i>
+							</div>
+						</div>
+						<script>
+							document.getElementById('udiv1').addEventListener('click', function() {
+								this.innerHTML = '<iframe width="100%" height="300" src="https://www.youtube.com/embed/PzV6gYpVLuc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+							}); 
+						</script>
+					</div>
+				</div>
+			</div>
+			<hr>
+			<div class = "binary_desc">
+				<h1>Booth's Algrithm</h1>
+				<br/>
+				<br/>
+				<p>
+					A division algorithm provides a quotient and a remainder when we divide two number. They are generally of two type slow algorithm and fast algorithm. Slow division algorithm are restoring, non-restoring, non-performing restoring, SRT algorithm and under fast comes Newton–Raphson and Goldschmidt.
+				</p>
+				<br/>
+				<br/>
+
+				<p>
+					Here, register Q contain quotient and register A contain remainder. Here, n-bit dividend is loaded in Q and divisor is loaded in M. Value of Register is initially kept 0 and this is the register whose value is restored during iteration due to which it is named Restoring.
+				</p>
+				<br><br>
+				<h2>Restoring Division Algorithm Flowchart</h2>
+				<br/>
+				<br/>
+				<img src="img/bin_div.png" style = "height: 40%; width: 60%;">
+
+				<br/>
+				<br/>
+				<p>Let's See the steps involed.</p>
+				<br>
+				<ol>
+					<li>First the registers are initialized with corresponding values (Q = Dividend, M = Divisor, A = 0, n = number of bits in dividend)</li>
+					<li>Then the content of register A and Q is shifted right as if they are a single unit</li>
+					<li>Then content of register M is subtracted from A and result is stored in A</li>
+					<li>
+						Then the most significant bit of the A is checked if it is 0 the least significant bit of Q is set to 1 otherwise if it is 1 the least significant bit of Q is set to 0 and value of register A is restored i.e the value of A before the subtraction with M
+					</li>
+					<li>The value of counter n is decremented</li>
+					<li>If the value of n becomes zero we get of the loop otherwise we repeat fro step 2</li>
+					<l>Finally, the register Q contain the quotient and A contain remainder</l>
+				</ol>
+				
+				<br/>
+			</div>
+		</section>
+
+		<section class = "vid_container div_ex1">
+			<div class = "container">
+				<div class = "row">
+					<div class = "col-md-3">
+					</div>
+					<div class = "col-md-6">
+						<h2 class = "vid_title";">Restore Algorithm Example 1 </h2>
+					</div>
+					<div class = "col-md-3">
+					</div>
+				</div>
+				<div class = "row">
+					<div class = "col-md-12">
+						<p class = "vid_brief">Watch video</p>
+					</div>
+				</div>
+			</div>
+			<hr>
+
+			<div class = "row">
+				<div class = "col-sm-3 col-md-3 col-lg-3"> </div>
+				<div class = "col-sm-6 col-md-6 col-lg-6">
+					<div class = "vid_box embed-responsive embed-responsive-16by9" id = "udiv2">
+						<div class = "vid_label"> <h3>6 + 3 </h3> </div>
+						<div class = "vid_overlay overlay_Left">
+						  <div class="vid_text">watch tutorial</div>
+						   <i class="fa fa-play-circle-o"></i>
+						</div>
+					</div>
+					<script>
+						document.getElementById('udiv2').addEventListener('click', function() {
+							this.innerHTML = '<iframe width="100%" height="300" src="https://www.youtube.com/embed/PzV6gYpVLuc?start=237" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+						}); 
+					</script>
+				</div>
+				<div class = "col-sm-3 col-md-3 col-lg-3"> </div>
+			</div>
+			
+		</section>
+
+		<section class = "vid_container div_ex2">
+			<div class = "container">
+				<div class = "row">
+					<div class = "col-md-3">
+					</div>
+					<div class = "col-md-6">
+						<h2 class = "vid_title";"> Restore Algorithm Example 2</h2>
+					</div>
+					<div class = "col-md-3">
+					</div>
+				</div>
+				<div class = "row">
+					<div class = "col-md-12">
+						<p class = "vid_brief">Watch Video</p>
+					</div>
+				</div>
+				
+			<hr>
+
+			<div class = "row">
+				<div class = "col-sm-3 col-md-3 col-lg-3"> </div>
+				<div class = "col-sm-6 col-md-6 col-lg-6">
+					<div class = "vid_box embed-responsive embed-responsive-16by9" id = "udiv3">
+						<div class = "vid_label"> <h3>6 + 3 </h3> </div>
+						<div class = "vid_overlay overlay_Left">
+						  <div class="vid_text">watch tutorial</div>
+						   <i class="fa fa-play-circle-o"></i>
+						</div>
+					</div>
+					<script>
+						document.getElementById('udiv3').addEventListener('click', function() {
+							this.innerHTML = '<iframe width="100%" height="300" src="https://www.youtube.com/embed/zVestoCRRbM?start=237" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+						}); 
+					</script>
+				</div>
+				<div class = "col-sm-3 col-md-3 col-lg-3"> </div>
+			</div>
+			
+		</section>
+
+		<div class="parallax4">
+
+		</div>
+
+		<section class = "sec members">
+			<div class = "container">
+				<h2>Meet The Team</h2>
+				
+				<br>
+
+				<div class="row">
+				  <div class="column">
+				    <div class="card">
+				      <img src="img/lee.png" alt="Jane" style="width:100%; height: 300px">
+				      <div class="container_pic">
+				        <h2>Lee Daniel</h2>
+				        <p class="title">Lead Programmer</p>
+				      </div>
+				    </div>
+				  </div>
+
+				  <div class="column">
+				    <div class="card">
+				      <img src="img/israel.png" alt="Mike" style="width:100%; height: 300px">
+				      <div class="container_pic">
+				        <h2>Israel</h2>
+				        <p class="title">Content Manager</p>
+				      </div>
+				    </div>
+				  </div>
+				  <div class="column">
+				    <div class="card">
+				      <img src="img/abra.png" alt="John" style="width:100%; height: 300px">
+				      <div class="container_pic">
+				        <h2>Abrahim</h2>
+				        <p class="title">Video Editor</p>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+			</div>
+		</section>
+
+		<script type = "text/javascript">
+			function openNav() {
+			  document.getElementById("myNav").style.height = "100%";
+			}
+
+			function closeNav() {
+			  document.getElementById("myNav").style.height = "0%";
+			}
+		</script>
+
+		<script type = "text/javascript">
+			$(document).ready(function(){
+				// Add smooth scrolling to all links
+				$("a").on('click', function(event) {
+
+					// Make sure this.hash has a value before overriding default behavior
+					if (this.hash !== "") {
+						  // Prevent default anchor click behavior
+						  event.preventDefault();
+
+						  // Store hash
+						  var hash = this.hash;
+
+						  // Using jQuery's animate() method to add smooth page scroll
+						  // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+						  $('html, body').animate({
+							scrollTop: $(hash).offset().top
+						  }, 1000, function(){
+
+								// Add hash (#) to URL when done scrolling (default click behavior)
+								window.location.hash = hash;
+						  });
+					} // End if
+				});
+			});
+		</script>
+		
+		<script type = "text/javascript">
+			$(document).ready(function(){
+				 $(".butt2").click(function(){
+					$(".Addition").slideToggle("slow");
+					$(".butt2").toggleClass("butt_hover");
+					$(".butt3, .butt4, .butt5, .butt6, .butt7").removeClass("butt_hover");
+					$(".Subtraction").slideUp("slow");
+					$(".multiplication").slideUp("slow");
+					$(".division").slideUp("slow");
+					$(".complement").slideUp("slow");
+					$(".Shitfs").slideUp("slow");
+				  });
+			});
+
+		  $(document).ready(function(){
+				$(".butt3").click(function(){
+					$(".Subtraction").slideToggle("slow");
+					$(".butt3").toggleClass("butt_hover");
+					$(".butt2, .butt4, .butt5, .butt6, .butt7").removeClass("butt_hover");
+					$(".Addition").slideUp("slow");
+					$(".Shitfs").slideUp("slow");
+					$(".multiplication").slideUp("slow");
+					$(".division").slideUp("slow");
+					$(".complement").slideUp("slow");
+				  });
+			});
+
+			$(document).ready(function(){
+			  	$(".butt4").click(function(){
+					$(".multiplication").slideToggle("slow");
+					$(".butt4").toggleClass("butt_hover");
+					$(".butt2, .butt3, .butt5, .butt6, .butt7").removeClass("butt_hover");
+					$(".Subtraction").slideUp("slow");
+					$(".Addition").slideUp("slow");
+					$(".division").slideUp("slow");
+					$(".Shitfs").slideUp("slow");
+					$(".complement").slideUp("slow");
+					
+			 	 });
+			});
+
+			$(document).ready(function(){
+				$(".butt5").click(function(){
+					$(".division").slideToggle("slow");
+					$(".butt5").toggleClass("butt_hover");
+					$(".butt2, .butt3, .butt4, .butt6, .butt7").removeClass("butt_hover");
+					$(".Shitfs").slideUp("slow");
+					$(".Subtraction").slideUp("slow");
+					$(".multiplication").slideUp("slow");
+					$(".Addition").slideUp("slow");
+					$(".complement").slideUp("slow");
+				});
+			});
+
+			$(document).ready(function(){
+			  	$(".butt6").click(function(){
+					$(".complement").slideToggle("slow");
+					$(".butt6").toggleClass("butt_hover");
+					$(".butt2, .butt3, .butt4, .butt5, .butt7").removeClass("butt_hover");
+					$(".Subtraction").slideUp("slow");
+					$(".multiplication").slideUp("slow");
+					$(".division").slideUp("slow");
+					$(".Addition").slideUp("slow");
+					$(".Shitfs").slideUp("slow");
+			  	});
+			});
+
+		  $(document).ready(function(){
+			  $(".butt7").click(function(){
+					$(".Shifts").slideToggle("slow");
+					$(".butt7").toggleClass("butt_hover");
+					$(".butt2, .butt3, .butt4, .butt5, .butt6").removeClass("butt_hover");
+					$(".Subtraction").slideUp("slow");
+					$(".multiplication").slideUp("slow");
+					$(".division").slideUp("slow");
+					$(".complement").slideUp("slow");
+					$(".Addition").slideUp("slow");
+			  });
+			});
+		</script>
+
+		<script type = "text/javascript">
+			$(document).ready(function(){
+			  $(".butt9").click(function(){
+				$(".add_test").slideToggle("slow");
+				$(".butt9").toggleClass("butt_hover");
+				$(".butt10, .butt11, .butt12, .butt13, .butt14").removeClass("butt_hover");
+				$(".sub_test").slideUp("slow");
+				$(".mul_test").slideUp("slow");
+				$(".div_test").slideUp("slow");
+				$(".com_test").slideUp("slow");
+				$(".shift_test").slideUp("slow");
+			  });
+			});
+
+		  $(document).ready(function(){
+			$(".butt10").click(function(){
+				$(".sub_test").slideToggle("slow");
+				$(".butt10").toggleClass("butt_hover");
+				$(".butt9, .butt11, .butt12, .butt13, .butt14").removeClass("butt_hover");
+				$(".add_test").slideUp("slow");
+				$(".mul_test").slideUp("slow");
+				$(".div_test").slideUp("slow");
+				$(".com_test").slideUp("slow");
+				$(".shift_test").slideUp("slow");
+			  });
+			});
+
+			$(document).ready(function(){
+			  	$(".butt11").click(function(){
+					$(".mul_test").slideToggle("slow");
+					$(".butt11").toggleClass("butt_hover");
+					$(".butt9, .butt10, .butt12, .butt13, .butt14").removeClass("butt_hover");	
+					$(".sub_test").slideUp("slow");
+					$(".add_test").slideUp("slow");
+					$(".div_test").slideUp("slow");
+					$(".com_test").slideUp("slow");
+					$(".shift_test").slideUp("slow");
+					
+			 	 });
+			});
+
+			$(document).ready(function(){
+				$(".butt12").click(function(){
+					$(".div_test").slideToggle("slow");
+					$(".butt12").toggleClass("butt_hover");
+					$(".butt9, .butt10, .butt11, .butt13, .butt14").removeClass("butt_hover");
+					$(".sub_test").slideUp("slow");
+					$(".mul_test").slideUp("slow");
+					$(".add_test").slideUp("slow");
+					$(".com_test").slideUp("slow");
+					$(".shift_test").slideUp("slow");
+				});
+			});
+
+			$(document).ready(function(){
+			  	$(".butt13").click(function(){
+					$(".com_test").slideToggle("slow");
+					$(".butt13").toggleClass("butt_hover");
+					$(".butt9, .butt10, .butt11, .butt12, .butt14").removeClass("butt_hover");
+					$(".sub_test").slideUp("slow");
+					$(".mul_test").slideUp("slow");
+					$(".div_test").slideUp("slow");
+					$(".add_test").slideUp("slow");
+					$(".shift_test").slideUp("slow");
+				});
+			});
+
+		  $(document).ready(function(){
+			  $(".butt14").click(function(){
+					$(".shift_test").slideToggle("slow");
+					$(".butt14").toggleClass("butt_hover");
+					$(".butt10, .butt11, .butt12, .butt13").removeClass("butt_hover");
+					$(".sub_test").slideUp("slow");
+					$(".mul_test").slideUp("slow");
+					$(".div_test").slideUp("slow");
+					$(".com_test").slideUp("slow");
+					$(".add_test").slideUp("slow");
+			  });
+			});
+		</script>
+
+		<script type = "text/javascript">
+			$(document).ready(function() {
+				var x = 1000;
+				$('#add').bootstrapValidator({
+					message: '#messages',
+					feedbackIcons: {
+						valid: 'glyphicon glyphicon-ok',
+						invalid: 'glyphicon glyphicon-remove',
+						validating: 'glyphicon glyphicon-refresh'
+					},
+					// Since the Bootstrap Button hides the radio and checkbox
+					// We exclude the disabled elements only
+					fields: {
+						name: {
+							validators: {
+								notEmpty: {
+									message: 'Your full name is required and cannot be empty'
+								},
+								regexp: {
+									regexp: /^[a-z\s]+$/i,
+									message: 'The full name can consist of alphabetical characters and spaces only'
+								},
+								stringLength: {
+									min: 2,
+									message: 'Your name should be longer than two characters'
+								}
+							}
+						},
+						email: {
+							validators: {
+								notEmpty: {
+									message: 'An email address is required and cannot be empty'
+								},
+								emailAddress: {
+									message: 'This email address is not valid'
+								}
+							}
+						},
+						num:{
+							validators:{
+								notEmpty:{
+									message: 'If you can"t answer contact Dr Als for a solution'
+								},
+								regexp: {
+									regexp: /^[0|1]*[01]$/,
+									message: 'Can only contain 1"s and 0"s'
+								},
+								different: {
+									compare: 1000,
+									message: 'Wrong Answer'
+								}
+							}
+						}
+					}
+
+				});
+			});
+		</script>
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+			  $(".butt15").click(function(){
+				$(".Unsigned_mul").slideToggle("slow");
+				$(".butt15").toggleClass("butt_hover");
+				$(".butt16, .butt17, .butt18").removeClass("butt_hover");
+				$(".mul_ex1").slideUp("slow");
+				$(".mul_ex2").slideUp("slow");
+				$(".mul_ex3").slideUp("slow");
+			  });
+			});
+
+			$(document).ready(function(){
+			  $(".butt16").click(function(){
+				$(".mul_ex1").slideToggle("slow");
+				$(".butt16").toggleClass("butt_hover");
+				$(".butt15, .butt17, .butt18").removeClass("butt_hover");
+				$(".Unsigned_mul").slideUp("slow");
+				$(".mul_ex2").slideUp("slow");
+				$(".mul_ex3").slideUp("slow");
+			  });
+			});
+
+			$(document).ready(function(){
+			  $(".butt17").click(function(){
+				$(".mul_ex2").slideToggle("slow");
+				$(".butt17").toggleClass("butt_hover");
+				$(".butt16, .butt15, .butt18").removeClass("butt_hover");
+				$(".mul_ex1").slideUp("slow");
+				$(".Unsigned_mul").slideUp("slow");
+				$(".mul_ex3").slideUp("slow");
+			  });
+			});
+
+			$(document).ready(function(){
+			  $(".butt18").click(function(){
+				$(".mul_ex3").slideToggle("slow");
+				$(".butt18").toggleClass("butt_hover");
+				$(".butt16, .butt17, .butt15").removeClass("butt_hover");
+				$(".mul_ex1").slideUp("slow");
+				$(".mul_ex2").slideUp("slow");
+				$(".Unsigned_mul").slideUp("slow");
+			  });
+			});				
+		</script>
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+			  $(".butt19").click(function(){
+				$(".Unsigned_div").slideToggle("slow");
+				$(".butt19").toggleClass("butt_hover");
+				$(".butt20, .butt21").removeClass("butt_hover");
+				$(".div_ex1").slideUp("slow");
+				$(".div_ex2").slideUp("slow");
+			  });
+			});
+
+			$(document).ready(function(){
+			  $(".butt20").click(function(){
+				$(".div_ex1").slideToggle("slow");
+				$(".butt20").toggleClass("butt_hover");
+				$(".butt19, .butt21").removeClass("butt_hover");
+				$(".Unsigned_div").slideUp("slow");
+				$(".div_ex2").slideUp("slow");
+			  });
+			});
+
+			$(document).ready(function(){
+			  $(".butt21").click(function(){
+				$(".div_ex2").slideToggle("slow");
+				$(".butt21").toggleClass("butt_hover");
+				$(".butt19, .butt20").removeClass("butt_hover");
+				$(".div_ex1").slideUp("slow");
+				$(".Unsigned_div").slideUp("slow");
+			  });
+			});
+		</script>
+		
+    </body>
+</html>

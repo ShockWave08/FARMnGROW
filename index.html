@@ -11,10 +11,8 @@
 		
 		<link href="logo.ico" rel="icon" type="image/x-icon" sizes="16x16">
 
-		<link rel="stylesheet" type="text/css" href="reset.css">
-
 		<!-- Latest compiled and minified CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
 
 		<link rel="stylesheet" href="Css/bootstrap.validate.min.css">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
@@ -49,6 +47,47 @@
 				text-align: center;
 				transition: all 0.5s ease;
 			}
+
+			.carousel{
+				max-height: 100%;
+				min-height: 100%;
+				min-width: 100%;
+				max-width: 100%;
+				margin: 0;
+				padding: 0;
+			}
+			.carousel-inner{
+				max-height: 100%;
+				min-height: 100%;
+				min-width: 100%;
+				max-width: 100%;
+			}
+
+			.slide {
+			   max-height: 100%;
+				min-height: 100%;
+				min-width: 100%;
+				max-width: 100%;
+			}
+
+			.carousel-item-prev, .carouse-item-next {
+			    opacity:0;
+			}
+
+			.carousel-caption-copy{
+			  position: absolute;
+			  color: #fff;
+			  top: 55%;
+			  width: 100%;
+			  font-size: 550%;
+			  font-family: 'Capriola', sans-serif;
+			  text-transform: uppercase;
+			  letter-spacing: 8px;
+			  font-weight: 800px;
+			  text-shadow: 0 0 10px #000;
+			  line-height: 40px;
+			}
+
 
 			.parallax1{
 				background-image: url("img/bgtemp.jpg");
@@ -259,85 +298,71 @@
 			  text-shadow: 0 0 10px #000;
 			  line-height: 40px;
 			}
-			
-			.carousel-caption-copy{
-			  position: absolute;
-			  color: #fff;
-			  top: 55%;
-			  width: 100%;
-			  font-size: 550%;
-			  font-family: 'Capriola', sans-serif;
-			  text-transform: uppercase;
-			  letter-spacing: 8px;
-			  font-weight: 800px;
-			  text-shadow: 0 0 10px #000;
-			  line-height: 40px;
-			}
 
 			.opt_butt1{
-    position: absolute;
-    color: #fff;
-    font-family: 'Capriola', sans-serif;
-    font-weight: 600 !important;
-    right: 620px;
-    height: 50px;
-    font-size: 150%;
-    line-height: 40px;
-    text-align: center;
-    padding: 0 20px;
-    cursor: pointer;
-    bottom: 18px;
-    border: 3px solid #fff;
-    border-radius: 10px 10px;
-    -moz-border-radius: 10px 10px;
-    -webkit-border-radius: 10px 10px;
-    -o-border-radius: 10px 10px;
-    transition: 0.7s;
-    -webkit-transition: 0.7s;
-    -moz-transition: 0.7s;
-    -o-transition: 0.7s;
+			    position: absolute;
+			    color: #fff;
+			    font-family: 'Capriola', sans-serif;
+			    font-weight: 600 !important;
+			    right: 620px;
+			    height: 50px;
+			    font-size: 150%;
+			    line-height: 40px;
+			    text-align: center;
+			    padding: 0 20px;
+			    cursor: pointer;
+			    bottom: 18px;
+			    border: 3px solid #fff;
+			    border-radius: 10px 10px;
+			    -moz-border-radius: 10px 10px;
+			    -webkit-border-radius: 10px 10px;
+			    -o-border-radius: 10px 10px;
+			    transition: 0.7s;
+			    -webkit-transition: 0.7s;
+			    -moz-transition: 0.7s;
+			    -o-transition: 0.7s;
 			}
 
 			.opt_butt1:hover{
-			  border: 3px solid #fff;
-			  border-top-color: #FF7F50;
-			  border-bottom-color: #00CED1;
-			  border-right-color: #FF7F50;
-			  border-left-color: #00CED1;
-			  color: #fff;
-			  box-shadow: 4px 4px 2px 2px rgba(0, 0, 0, 0.3);
-			  -webkit-transition: 0.7s;
-			  -moz-transition: 0.7s;
-			  -o-transition: 0.7s;
-			  transition: 0.7s;
+				border: 3px solid #fff;
+				border-top-color: #FF7F50;
+				border-bottom-color: #00CED1;
+				border-right-color: #FF7F50;
+				border-left-color: #00CED1;
+				color: #fff;
+				box-shadow: 4px 4px 2px 2px rgba(0, 0, 0, 0.3);
+				-webkit-transition: 0.7s;
+				-moz-transition: 0.7s;
+				-o-transition: 0.7s;
+				transition: 0.7s;
 			}
 
 			.opt_butt1::before, .opt_butt1::after{
-			  width: 100%;
-			  height:100%;
-			  z-index: 3;
-			  content: '';
-			  position: absolute;
-			  top:0;
-			  left:0;
-			  box-sizing: border-box;
-			  transform: scale(0);
-			  -webkit-transform: scale(0);
-			  -moz-transform: scale(0);
-			  -o-transform: scale(0);
-			  -webkit-transition: 0.7s;
-			  -moz-transition: 0.7s;
-			  -o-transition: 0.7s;
-			  transition: 0.7s;
+				width: 100%;
+				height:100%;
+				z-index: 3;
+				content: '';
+				position: absolute;
+				top:0;
+				left:0;
+				box-sizing: border-box;
+				transform: scale(0);
+				-webkit-transform: scale(0);
+				-moz-transform: scale(0);
+				-o-transform: scale(0);
+				-webkit-transition: 0.7s;
+				-moz-transition: 0.7s;
+				-o-transition: 0.7s;
+				transition: 0.7s;
 			}
 
 			.anim1_butt::before{
-			  border-bottom: 3px solid #00CED1;
-			  border-left: 3px solid #00CED1;
-			  transform-origin: 100% 0%;
-			  -webkit-transform-origin: 100% 0%;
-			  -moz-transform-origin: 100% 0%;
-			  -o-transform-origin: 100% 0%;
+				border-bottom: 3px solid #00CED1;
+				border-left: 3px solid #00CED1;
+				transform-origin: 100% 0%;
+				-webkit-transform-origin: 100% 0%;
+				-moz-transform-origin: 100% 0%;
+				-o-transform-origin: 100% 0%;
 			}
 
 
@@ -389,14 +414,15 @@
 			.farm_container{
 				background-color: rgba(244, 164, 96, 0.7);
 				display: none;
+				width: 100%;
 				margin: 0;
 				padding: 0 0 3% 0;
 			}
 
 			.farm_box{
 				position: relative;
-				height: 400px;
-				width: 90%;
+				height: 350px;
+				width: 80%;
 				border: 2px solid #fff;
 				margin-bottom: 20px;
 				border-radius: 25px;
@@ -406,27 +432,30 @@
 				position: relative;
 				opacity: .75;
 				background-position: center;
-				-webkit-background-size: contain;
-				-moz-background-size: contain;
-				-o-background-size: contain;
-				background-size: 100% 100%;
+				-webkit-background-size: cover;
+				-moz-background-size: cover;
+				-o-background-size: cover;
+				background-size: cover;
 				background-repeat: no-repeat;
-				background-attachment: fixed;
+				background-attachment: scroll;
 			}
 
 			.farm_box1{
 				background-image: url("img/bgimg2.jpg");
 				min-width: 100%;
+				min-height: 100%;
 			}
 
 			.farm_box2{
 				background-image: url("img/bgimg6.jpg");
 				min-width: 100%;
+				min-height: 100%;
 			}
 
 			.farm_box3{
 				background-image: url("img/bgtemp1.jpg");
 				min-width: 100%;
+				min-height: 100%;
 			}
 
 			.farm_box:hover{
@@ -530,41 +559,31 @@
 				box-shadow: none;
 			}
 
-			.control-label{
+			label{
 				color: #fff;
 				font-family: Roboto, sans-serif;
 				font-size: 1.5em;
 				font-weight: 600;
 			}
 
-			#arithmetic_test .form-horizontal .has-feedback .form-control-feedback {
-				top: 0;
-				right: -30px;
-			}
-
 			form{	
 				margin: 0;
 				padding: 0;
 			}
-
-			section{
-				padding: 0;
-				margin: 0;
-			}
-
-
 		</style>
 
 
 	</head>
 
     <body>
-		<a href = "#top">
+    	<!--- Logo icon -->
+		<a href = "#farmsmartCarousel">
 			<div id = "logo">
 				<p> FarmSmart </p>
 			</div>
 		</a>
 
+		<!--- Hamburger Menu Icon -->
 		<span id = "menu" style="cursor:pointer" onclick="openNav()">
 			<div class="menu_icon">
 			  <div class="bar1"></div>
@@ -583,102 +602,83 @@
             </div>
         </div>
 		
-		
-		
-		
-		<div id="farmsmartCarousel" class="carousel slide" data-ride="carousel" style="width: 100%;">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#farmsmartCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#farmsmartCarousel" data-slide-to="1"></li>
-    <li data-target="#farmsmartCarousel" data-slide-to="2"></li>
-	<li data-target="#farmsmartCarousel" data-slide-to="3"></li>
-	<li data-target="#farmsmartCarousel" data-slide-to="4"></li>
-	<li data-target="#farmsmartCarousel" data-slide-to="5"></li>  
-  </ol>
+		<div id="farmsmartCarousel" class="carousel slide" data-ride="carousel"">
+			<!-- Indicators -->
+			<ol class="carousel-indicators">
+				<li data-target="#farmsmartCarousel" data-slide-to="0" class="active"></li>
+				<li data-target="#farmsmartCarousel" data-slide-to="1"></li>
+				<li data-target="#farmsmartCarousel" data-slide-to="2"></li>
+				<li data-target="#farmsmartCarousel" data-slide-to="3"></li>
+				<li data-target="#farmsmartCarousel" data-slide-to="4"></li>
+				<li data-target="#farmsmartCarousel" data-slide-to="5"></li>  
+			</ol>
 
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner">
-    <div class="item active">
-		
-		<video src="video/Pexels Videos 1276083.mp4" autoplay="autoplay" muted loop="loop" style="width: 100%;" ></video>
-		
-		<div class="carousel-caption-copy">
-		  <h3>Cut Costs, Reduce Taxes, <br><br>and<br><br> Create a Sustainable Future with Solar</h3>
+			<!-- Wrapper for slides -->
+			<div class="carousel-inner">
+				<div class="item active">
+					<video src="video/Pexels Videos 1276083.mp4" autoplay="autoplay" muted loop="loop" style="width: 100%;" ></video>
+					<div class="carousel-caption-copy">
+						<h3>Cut Costs, Reduce Taxes, <br><br>and<br><br> Create a Sustainable Future with Solar</h3>
+					</div>
+				</div>
 
-      </div>
-		
-    </div>
-	  
-	  <audio autoplay volume="0.1">
-  <source src="audio/08.mp3" type="audio/mpeg">
-Your browser does not support the audio element.
-</audio>
-	  
+				<!--
+				<audio autoplay volume="0.1">
+					<source src="audio/08.mp3" type="audio/mpeg">
+					Your browser does not support the audio element.
+				</audio>
+				-->
 
-    <div class="item">
-		
-      <img src="img/aerial-aerial-shot-alternative-1907419.jpg" alt="Alternative Energy">
-		
-		<div class="carousel-caption-copy">
-          <h3 align="center">Does your electric bill frustrate you?<br><br>Are you looking for a way to secure your farm’s future?</h3>
-        </div>
-    </div>
+				<div class="item">
+					<img src="img/aerial-aerial-shot-alternative-1907419.jpg" alt="Alternative Energy">
+					<div class="carousel-caption-copy">
+						<h3 align="center">Does your electric bill frustrate you?<br><br>Are you looking for a way to secure your farm’s future?</h3>
+					</div>
+				</div>
 
-    <div class="item">
-      <img src="img/windmill-664669_1920.jpg" alt="Windmill" >
-		
-		<div class="carousel-caption">
-          <p class="small" style="font-weight: 100">Farm Smart &copy;</p>
-        </div>
-		
-    </div>
-	  
-	  <div class="item">
-      <img src="img/Sheep-Solar-Panels-1500x844.jpg" alt="Alternative Energy on the Farm">
-		
-		<div class="carousel-caption">
-          <p class="small" style="font-weight: 100">Farm Smart &copy;</p>
-        </div>
-    </div>
-	  
-	  <div class="item">
-      <img src="img/Cherry-Crest_Rectangle.png" width="200%" alt="Farms of the future">
-		
-		<div class="carousel-caption-copy">
-          <h3 align="center">Agricultural solar systems have a payback of <br><br>under 10 years</h3>
-        </div>
-    </div>
-	  
-	  
-    <div class="item">
-		
-	  <video src="video/Video Footage Of A Farm.mp4" autoplay="autoplay" muted loop="loop" style="width: 100%;" ></video>
-		
-		<div class="carousel-caption-copy">
-		  <h3 align="center">Reduce Power Consumption | Increase production <br><br> Solar is right for you</h3>
+				<div class="item">
+					<img src="img/windmill-664669_1920.jpg" alt="Windmill" >
+					<div class="carousel-caption">
+					<p class="small" style="font-weight: 100">Farm Smart &copy;</p>
+					</div>
+				</div>
 
-        </div>
-		
-    </div>
-	  
-  </div>
+				<div class="item">
+					<img src="img/parallaximg5.jpeg" alt="Alternative Energy on the Farm">
+					<div class="carousel-caption">
+						<p class="small" style="font-weight: 100">Farm Smart &copy;</p>
+					</div>
+				</div>
 
-  <!-- Left and right controls -->
-  <a class="left carousel-control" href="#farmsmartCarousel" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#farmsmartCarousel" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-		
-		
-		
+				<div class="item">
+					<img src="img/Cherry-Crest_Rectangle.png" width="100%" alt="Farms of the future">
+					<div class="carousel-caption-copy">
+						<h3 align="center">Agricultural solar systems have a payback of <br><br>under 10 years</h3>
+					</div>
+				</div>
 
-	<div class = "parallax1" id = "top">
+
+				<div class="item">
+					<video src="video/Video Footage Of A Farm.mp4" autoplay="autoplay" muted loop="loop" style="width: 100%;" ></video>
+					<div class="carousel-caption-copy">
+					<h3 align="center">Reduce Power Consumption | Increase production <br><br> Solar is right for you</h3>
+					</div>
+				</div>
+
+			</div>
+
+			<!-- Left and right controls -->
+			<a class="left carousel-control" href="#farmsmartCarousel" data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+			<a class="right carousel-control" href="#farmsmartCarousel" data-slide="next">
+				<span class="glyphicon glyphicon-chevron-right"></span>
+				<span class="sr-only">Next</span>
+			</a>
+		</div>
+
+		<div class = "parallax1">
 			<div class="heading">
 				<p>Saving Time,</p>
 				<br>
@@ -715,12 +715,6 @@ Your browser does not support the audio element.
 				</div>
 			</div>
         </section>
-		
-		
-		
-		
-		
-		
 
 		<div class="parallax2">
 			
@@ -753,7 +747,7 @@ Your browser does not support the audio element.
 				<!-- row 3  of buttons-->
 				<div class = "row">
 					<div class = "col-sm-4 col-md-4 col-lg-4">
-						<div class = "farm_box farm_box1" id = "add1">
+						<div class = "farm_box farm_box1  butt1" id = "add1">
 							<div class = "farm_overlay overlay_Top">
 							  <div class="farm_text">Crop Farming</div>
 							   <i class="fas fa-leaf"></i>
@@ -761,7 +755,7 @@ Your browser does not support the audio element.
 						</div>
 					</div>
 					<div class = "col-sm-4 col-md-4 col-lg-4">
-						<div class = "farm_box farm_box2" id = "add1">
+						<div class = "farm_box farm_box2 butt2" id = "add1">
 							<div class = "farm_overlay overlay_Top">
 							  <div class="farm_text">Poultry Farming</div>
 							   <i class="fas fa-feather-alt"></i>
@@ -769,7 +763,7 @@ Your browser does not support the audio element.
 						</div>
 					</div>
 	        		<div class = "col-sm-4 col-md-4 col-lg-4">
-	        			<div class = "farm_box farm_box3" id = "add1">
+	        			<div class = "farm_box farm_box3 butt3" id = "add1">
 							<div class = "farm_overlay overlay_Top">
 							  <div class="farm_text">Animal Husbandry</div>
 							   <i class="fas fa-horse"></i>
@@ -780,57 +774,51 @@ Your browser does not support the audio element.
 			</div>
 		</section>
 
-		<section class = "farm_container add_test">
-			<div class = "container">
-				<div class = "row">
-					<div class = "col-md-3">
+		<section class = "farm_container crop">
+			<div class="container-fluid">
+				<h2>T</h2>
+				<form >
+					<div class="form-group">
+						<label for="sel1">Where is your farm located?</label>
+						<select class="form-control" id="sel1">
+							<option selected=""></option>
+							<option>Caribbean</option>
+							<option>North America</option>
+							<option>South America</option>
+							<option>Europe</option>
+							<option>Africa</option>
+							<option>Africa</option>
+						</select>
 					</div>
-					<div class = "col-md-6">
-						<h2 class = "farm_title"> Binary Addition Test</h2>
+					<div class="form-group">
+						<label for="kwh">How much KiloWatt Per Charge Does your electrical company Charge?</label>
+						<input type="text" class="form-control" id="pwd" placeholder="Enter KW/h" name="pwd">
 					</div>
-					<div class = "col-md-3">
+					<div class="form-group">
+						<label for="pwd">Do you use electrical tools? What is the wattage on each appliance? How long do you use each tool?</label>
+						<input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
 					</div>
-				</div>
-				<div class = "row">
-					<div class = "col-md-12">
-						<p class = "farm_brief">Complete the exercises.</p>
+
+					<div id='TextBoxesGroup'>
+						<div id="TextBoxDiv1">
+							<label>Tool #1 : </label><input type='textbox' id='textbox1' >
+						</div>
 					</div>
-				</div>
+					<input type='button' value='Add Button' id='addButton'>
+					<input type='button' value='Remove Button' id='removeButton'>
+					<input type='button' value='Get TextBox Value' id='getButtonValue'>
+
+					<div class="form-group">
+						<label for="pwd">Password:</label>
+						<input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+					</div>
+					
+					<button type="submit" class="btn btn-default">Submit</button>
+				</form>
 			</div>
-			<hr>
-			<form id = "add" class="form-horizontal">
-				<div class="form-group">
-					<label class="control-label col-sm-4"> 101 + 11:</label>
-					<div class="col-sm-3">
-						<input type="text" class="form-control" id ="numa" name = "num" placeholder="Enter Answer"> 
-						<div id="messages"></div>
-					</div>
-				</div>
-
-				<div class="form-group">
-					<label class="control-label col-sm-4"> 111 + 111:</label>
-					<div class="col-sm-3">
-						<input type="text" class="form-control"  id ="numa" name = "num"  placeholder="Enter Answer">
-					</div>
-				</div>
-
-				<div class="form-group">
-					<label class="control-label col-sm-4"> 1011 + 0101:</label>
-					<div class="col-sm-3">
-						<input type="text" class="form-control" id ="numa" name = "num" id="Exer" placeholder="Enter Answer">
-					</div>
-				</div>
-
-				<div class="form-group">
-					<label class="control-label col-sm-4"> 11011 + 11010:</label>
-					<div class="col-sm-3">
-						<input type="text" class="form-control"  id ="numa" name = "num" placeholder="Enter Answer">
-					</div>
-				</div>
-			</form>
 		</section>
 
-		<section class = "farm_container sub_test">
+		<section class = "farm_container poultry">
 			<div class = "container">
 				<div class = "row">
 					<div class = "col-md-3">
@@ -881,7 +869,7 @@ Your browser does not support the audio element.
 			</form>
 		</section>
 
-		<section class = "farm_container mul_test">
+		<section class = "farm_container dairy">
 			<div class = "container">
 				<div class = "row">
 					<div class = "col-md-3">
@@ -931,172 +919,10 @@ Your browser does not support the audio element.
 			</form>
 		</section>
 
-		<section class = "farm_container div_test">
-			<div class = "container">
-				<div class = "row">
-					<div class = "col-md-3">
-					</div>
-					<div class = "col-md-6">
-						<h2 class = "farm_title"> Binary Division Test</h2>
-					</div>
-					<div class = "col-md-3">
-					</div>
-				</div>
-				<div class = "row">
-					<div class = "col-md-12">
-						<p class = "farm_brief">what to do.</p>
-					</div>
-				</div>
-			</div>
-			<hr>
-			<form id = "add" class="form-horizontal">
-				<div class="form-group">
-					<label class="control-label col-sm-4"> 110 / 11:</label>
-					<div class="col-sm-3">
-						<input type="text" class="form-control" id ="numa" name = "num" placeholder="Enter Answer"> 
-						<div id="messages"></div>
-					</div>
-				</div>
-
-				<div class="form-group">
-					<label class="control-label col-sm-4"> 100010 / 1100:</label>
-					<div class="col-sm-3">
-						<input type="text" class="form-control"  id ="numa" name = "num"  placeholder="Enter Answer">
-					</div>
-				</div>
-
-				<div class="form-group">
-					<label class="control-label col-sm-4"> 1010 / 0101:</label>
-					<div class="col-sm-3">
-						<input type="text" class="form-control" id ="numa" name = "num" id="Exer" placeholder="Enter Answer">
-					</div>
-				</div>
-
-				<div class="form-group">
-					<label class="control-label col-sm-4"> 1110 / 111:</label>
-					<div class="col-sm-3">
-						<input type="text" class="form-control"  id ="numa" name = "num" placeholder="Enter Answer">
-					</div>
-				</div>
-			</form>
-		</section>
-
-		<section class = "farm_container com_test">
-			<div class = "container">
-				<div class = "row">
-					<div class = "col-md-3">
-					</div>
-					<div class = "col-md-6">
-						<h2 class = "farm_title"> Binary Complement Test</h2>
-					</div>
-					<div class = "col-md-3">
-					</div>
-				</div>
-				<div class = "row">
-					<div class = "col-md-12">
-						<p class = "farm_brief">what to do.</p>
-					</div>
-				</div>
-			</div>
-			<hr>
-			<form id = "add" class="form-horizontal">
-				<div class="form-group">
-					<label class="control-label col-sm-4"> 10111:</label>
-					<div class="col-sm-3">
-						<input type="text" class="form-control"  id ="numa" name = "num" placeholder="Enter 1's Complement">
-					</div>
-					<div class="col-sm-3">
-						<input type="text" class="form-control"  id ="numa" name = "num" placeholder="Enter 2's Complement">
-					</div>
-				</div>
-
-				<div class="form-group">
-					<label class="control-label col-sm-4"> 111111:</label>
-					<div class="col-sm-3">
-						<input type="text" class="form-control"  id ="numa" name = "num" placeholder="Enter 1's Complement">
-					</div>
-					<div class="col-sm-3">
-						<input type="text" class="form-control"  id ="numa" name = "num" placeholder="Enter 2's Complement">
-					</div>
-				</div>
-
-				<div class="form-group">
-					<label class="control-label col-sm-4"> 10110101:</label>
-					<div class="col-sm-3">
-						<input type="text" class="form-control"  id ="numa" name = "num" placeholder="Enter 1's Complement">
-					</div>
-					<div class="col-sm-3">
-						<input type="text" class="form-control"  id ="numa" name = "num" placeholder="Enter 2's Complement">
-					</div>
-				</div>
-
-				<div class="form-group">
-					<label class="control-label col-sm-4"> 1101111010:</label>
-					<div class="col-sm-3">
-						<input type="text" class="form-control"  id ="numa" name = "num" placeholder="Enter 1's Complement">
-					</div>
-					<div class="col-sm-3">
-						<input type="text" class="form-control"  id ="numa" name = "num" placeholder="Enter 2's Complement">
-					</div>
-				</div>
-			</form>
-		</section>
-
-		<section class = "farm_container shift_test">
-			<div class = "container">
-				<div class = "row">
-					<div class = "col-md-3">
-					</div>
-					<div class = "col-md-6">
-						<h2 class = "farm_title"> Binary Shifting Test</h2>
-					</div>
-					<div class = "col-md-3">
-					</div>
-				</div>
-				<div class = "row">
-					<div class = "col-md-12">
-						<p class = "farm_brief">what to do.</p>
-					</div>
-				</div>
-			</div>
-			<hr>
-			<form id = "add" class="form-horizontal">
-				<div class="form-group">
-					<label class="control-label col-sm-4"> <i>00010 &lt;&lt; &#8594;  1</i> :</label>
-					<div class="col-sm-3">
-						<input type="text" class="form-control" id ="numa" name = "num" placeholder="Enter Answer"> 
-						<div id="messages"></div>
-					</div>
-				</div>
-
-				<div class="form-group">
-					<label class="control-label col-sm-4"> <i>0010010 &lt;&lt;  &#8594;  2</i>:</label>
-					<div class="col-sm-3">
-						<input type="text" class="form-control"  id ="numa" name = "num"  placeholder="Enter Answer">
-					</div>
-				</div>
-
-				<div class="form-group">
-					<label class="control-label col-sm-4"> 0101011 &gt;&gt;  &#8594; 2:</label>
-					<div class="col-sm-3">
-						<input type="text" class="form-control" id ="numa" name = "num" id="Exer" placeholder="Enter Answer">
-					</div>
-				</div>
-
-				<div class="form-group">
-					<label class="control-label col-sm-4"> 10100111 &gt;&gt;  &#8594; 3:</label>
-					<div class="col-sm-3">
-						<input type="text" class="form-control"  id ="numa" name = "num" placeholder="Enter Answer">
-					</div>
-				</div>
-			</form>
-		</section>
-
 		<div class="parallax3">
-
 		</div>
 
-
+		<!-- open and close overlay function --> 
 		<script type = "text/javascript">
 			function openNav() {
 			  document.getElementById("myNav").style.height = "100%";
@@ -1107,6 +933,7 @@ Your browser does not support the audio element.
 			}
 		</script>
 
+		<!-- Slow transition between anchor link jumps -->
 		<script type = "text/javascript">
 			$(document).ready(function(){
 				// Add smooth scrolling to all links
@@ -1134,168 +961,87 @@ Your browser does not support the audio element.
 			});
 		</script>
 		
+		<!-- Toggle slide questions -->
 		<script type = "text/javascript">
 			$(document).ready(function(){
-				 $(".butt2").click(function(){
-					$(".Addition").slideToggle("slow");
+				$(".butt1").click(function(){
+					$(".crop").slideToggle("slow");
+					$(".butt1").toggleClass("butt_hover");
+					$(".butt2, .butt3").removeClass("butt_hover");
+					$(".poultry").slideUp("slow");
+					$(".dairy").slideUp("slow");
+				  });
+			});	
+
+			$(document).ready(function(){
+				$(".butt2").click(function(){
+					$(".poultry").slideToggle("slow");
 					$(".butt2").toggleClass("butt_hover");
-					$(".butt3, .butt4, .butt5, .butt6, .butt7").removeClass("butt_hover");
-					$(".Subtraction").slideUp("slow");
-					$(".multiplication").slideUp("slow");
-					$(".division").slideUp("slow");
-					$(".complement").slideUp("slow");
-					$(".Shitfs").slideUp("slow");
+					$(".butt1, .butt3").removeClass("butt_hover");
+					$(".crop").slideUp("slow");
+					$(".dairy").slideUp("slow");
 				  });
 			});
 
-		  $(document).ready(function(){
-				$(".butt3").click(function(){
-					$(".Subtraction").slideToggle("slow");
+			$(document).ready(function(){
+			  	$(".butt3").click(function(){
+					$(".dairy").slideToggle("slow");
 					$(".butt3").toggleClass("butt_hover");
-					$(".butt2, .butt4, .butt5, .butt6, .butt7").removeClass("butt_hover");
-					$(".Addition").slideUp("slow");
-					$(".Shitfs").slideUp("slow");
-					$(".multiplication").slideUp("slow");
-					$(".division").slideUp("slow");
-					$(".complement").slideUp("slow");
-				  });
-			});
-
-			$(document).ready(function(){
-			  	$(".butt4").click(function(){
-					$(".multiplication").slideToggle("slow");
-					$(".butt4").toggleClass("butt_hover");
-					$(".butt2, .butt3, .butt5, .butt6, .butt7").removeClass("butt_hover");
-					$(".Subtraction").slideUp("slow");
-					$(".Addition").slideUp("slow");
-					$(".division").slideUp("slow");
-					$(".Shitfs").slideUp("slow");
-					$(".complement").slideUp("slow");
-					
+					$(".butt1, .butt2").removeClass("butt_hover");
+					$(".poultry").slideUp("slow");
+					$(".crop").slideUp("slow");
 			 	 });
-			});
-
-			$(document).ready(function(){
-				$(".butt5").click(function(){
-					$(".division").slideToggle("slow");
-					$(".butt5").toggleClass("butt_hover");
-					$(".butt2, .butt3, .butt4, .butt6, .butt7").removeClass("butt_hover");
-					$(".Shitfs").slideUp("slow");
-					$(".Subtraction").slideUp("slow");
-					$(".multiplication").slideUp("slow");
-					$(".Addition").slideUp("slow");
-					$(".complement").slideUp("slow");
-				});
-			});
-
-			$(document).ready(function(){
-			  	$(".butt6").click(function(){
-					$(".complement").slideToggle("slow");
-					$(".butt6").toggleClass("butt_hover");
-					$(".butt2, .butt3, .butt4, .butt5, .butt7").removeClass("butt_hover");
-					$(".Subtraction").slideUp("slow");
-					$(".multiplication").slideUp("slow");
-					$(".division").slideUp("slow");
-					$(".Addition").slideUp("slow");
-					$(".Shitfs").slideUp("slow");
-			  	});
-			});
-
-		  $(document).ready(function(){
-			  $(".butt7").click(function(){
-					$(".Shifts").slideToggle("slow");
-					$(".butt7").toggleClass("butt_hover");
-					$(".butt2, .butt3, .butt4, .butt5, .butt6").removeClass("butt_hover");
-					$(".Subtraction").slideUp("slow");
-					$(".multiplication").slideUp("slow");
-					$(".division").slideUp("slow");
-					$(".complement").slideUp("slow");
-					$(".Addition").slideUp("slow");
-			  });
 			});
 		</script>
 
-		<script type = "text/javascript">
+		<!-- Dynamically Add fields -->
+		<script type="text/javascript">
 			$(document).ready(function(){
-			  $(".butt9").click(function(){
-				$(".add_test").slideToggle("slow");
-				$(".butt9").toggleClass("butt_hover");
-				$(".butt10, .butt11, .butt12, .butt13, .butt14").removeClass("butt_hover");
-				$(".sub_test").slideUp("slow");
-				$(".mul_test").slideUp("slow");
-				$(".div_test").slideUp("slow");
-				$(".com_test").slideUp("slow");
-				$(".shift_test").slideUp("slow");
-			  });
-			});
+				var counter = 2;
 
-		  $(document).ready(function(){
-			$(".butt10").click(function(){
-				$(".sub_test").slideToggle("slow");
-				$(".butt10").toggleClass("butt_hover");
-				$(".butt9, .butt11, .butt12, .butt13, .butt14").removeClass("butt_hover");
-				$(".add_test").slideUp("slow");
-				$(".mul_test").slideUp("slow");
-				$(".div_test").slideUp("slow");
-				$(".com_test").slideUp("slow");
-				$(".shift_test").slideUp("slow");
-			  });
-			});
+				/*Add Fields to form*/
+				$("#addButton").click(function () {
+					if(counter>10){
+						alert("Only 10 textboxes allow");
+						return false;
+					}   
 
-			$(document).ready(function(){
-			  	$(".butt11").click(function(){
-					$(".mul_test").slideToggle("slow");
-					$(".butt11").toggleClass("butt_hover");
-					$(".butt9, .butt10, .butt12, .butt13, .butt14").removeClass("butt_hover");	
-					$(".sub_test").slideUp("slow");
-					$(".add_test").slideUp("slow");
-					$(".div_test").slideUp("slow");
-					$(".com_test").slideUp("slow");
-					$(".shift_test").slideUp("slow");
-					
-			 	 });
-			});
+					var newTextBoxDiv = $(document.createElement('div'))
+					.attr("id", 'TextBoxDiv' + counter);
+					    
+					newTextBoxDiv.after().html('<label>Tool #'+ counter + ' : </label>' + '<input type="text" name="Tool' + counter + ' " id="textbox' + counter + '" value="" >');
 
-			$(document).ready(function(){
-				$(".butt12").click(function(){
-					$(".div_test").slideToggle("slow");
-					$(".butt12").toggleClass("butt_hover");
-					$(".butt9, .butt10, .butt11, .butt13, .butt14").removeClass("butt_hover");
-					$(".sub_test").slideUp("slow");
-					$(".mul_test").slideUp("slow");
-					$(".add_test").slideUp("slow");
-					$(".com_test").slideUp("slow");
-					$(".shift_test").slideUp("slow");
+					newTextBoxDiv.appendTo("#TextBoxesGroup");
+
+						
+					counter++;
 				});
-			});
 
-			$(document).ready(function(){
-			  	$(".butt13").click(function(){
-					$(".com_test").slideToggle("slow");
-					$(".butt13").toggleClass("butt_hover");
-					$(".butt9, .butt10, .butt11, .butt12, .butt14").removeClass("butt_hover");
-					$(".sub_test").slideUp("slow");
-					$(".mul_test").slideUp("slow");
-					$(".div_test").slideUp("slow");
-					$(".add_test").slideUp("slow");
-					$(".shift_test").slideUp("slow");
+				/*Remove Field*/
+				$("#removeButton").click(function () {
+					if(counter==1){
+						alert("No more textbox to remove");
+						return false;
+					}   
+
+					counter--;
+
+					$("#TextBoxDiv" + counter).remove();
+
 				});
-			});
 
-		  $(document).ready(function(){
-			  $(".butt14").click(function(){
-					$(".shift_test").slideToggle("slow");
-					$(".butt14").toggleClass("butt_hover");
-					$(".butt10, .butt11, .butt12, .butt13").removeClass("butt_hover");
-					$(".sub_test").slideUp("slow");
-					$(".mul_test").slideUp("slow");
-					$(".div_test").slideUp("slow");
-					$(".com_test").slideUp("slow");
-					$(".add_test").slideUp("slow");
-			  });
+				/*get total amount of values in field*/
+				$("#getButtonValue").click(function () {
+					var sum = 0;
+					for(i=1; i<counter; i++){
+						sum += Number($('#textbox' + i).val());
+					}
+					alert(sum);
+				});
 			});
 		</script>
 
+		<!-- Form Validator -->
 		<script type = "text/javascript">
 			$(document).ready(function() {
 				var x = 1000;
@@ -1355,84 +1101,8 @@ Your browser does not support the audio element.
 			});
 		</script>
 
-		<script type="text/javascript">
-			$(document).ready(function(){
-			  $(".butt15").click(function(){
-				$(".Unsigned_mul").slideToggle("slow");
-				$(".butt15").toggleClass("butt_hover");
-				$(".butt16, .butt17, .butt18").removeClass("butt_hover");
-				$(".mul_ex1").slideUp("slow");
-				$(".mul_ex2").slideUp("slow");
-				$(".mul_ex3").slideUp("slow");
-			  });
-			});
 
-			$(document).ready(function(){
-			  $(".butt16").click(function(){
-				$(".mul_ex1").slideToggle("slow");
-				$(".butt16").toggleClass("butt_hover");
-				$(".butt15, .butt17, .butt18").removeClass("butt_hover");
-				$(".Unsigned_mul").slideUp("slow");
-				$(".mul_ex2").slideUp("slow");
-				$(".mul_ex3").slideUp("slow");
-			  });
-			});
 
-			$(document).ready(function(){
-			  $(".butt17").click(function(){
-				$(".mul_ex2").slideToggle("slow");
-				$(".butt17").toggleClass("butt_hover");
-				$(".butt16, .butt15, .butt18").removeClass("butt_hover");
-				$(".mul_ex1").slideUp("slow");
-				$(".Unsigned_mul").slideUp("slow");
-				$(".mul_ex3").slideUp("slow");
-			  });
-			});
-
-			$(document).ready(function(){
-			  $(".butt18").click(function(){
-				$(".mul_ex3").slideToggle("slow");
-				$(".butt18").toggleClass("butt_hover");
-				$(".butt16, .butt17, .butt15").removeClass("butt_hover");
-				$(".mul_ex1").slideUp("slow");
-				$(".mul_ex2").slideUp("slow");
-				$(".Unsigned_mul").slideUp("slow");
-			  });
-			});				
-		</script>
-
-		<script type="text/javascript">
-			$(document).ready(function(){
-			  $(".butt19").click(function(){
-				$(".Unsigned_div").slideToggle("slow");
-				$(".butt19").toggleClass("butt_hover");
-				$(".butt20, .butt21").removeClass("butt_hover");
-				$(".div_ex1").slideUp("slow");
-				$(".div_ex2").slideUp("slow");
-			  });
-			});
-
-			$(document).ready(function(){
-			  $(".butt20").click(function(){
-				$(".div_ex1").slideToggle("slow");
-				$(".butt20").toggleClass("butt_hover");
-				$(".butt19, .butt21").removeClass("butt_hover");
-				$(".Unsigned_div").slideUp("slow");
-				$(".div_ex2").slideUp("slow");
-			  });
-			});
-
-			$(document).ready(function(){
-			  $(".butt21").click(function(){
-				$(".div_ex2").slideToggle("slow");
-				$(".butt21").toggleClass("butt_hover");
-				$(".butt19, .butt20").removeClass("butt_hover");
-				$(".div_ex1").slideUp("slow");
-				$(".Unsigned_div").slideUp("slow");
-			  });
-			});
-		</script>
-		
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 		
     </body>
